@@ -53,6 +53,56 @@
             bindings = <&kp SPACE>;
             key-positions = <18 20>;
         };
+
+        up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <11 12 13 41>;
+        };
+
+        left {
+            bindings = <&kp LEFT>;
+            key-positions = <11 12 13 18>;
+        };
+
+        right {
+            bindings = <&kp RIGHT>;
+            key-positions = <11 12 13 20>;
+        };
+
+        down {
+            bindings = <&kp DOWN>;
+            key-positions = <11 12 13 21>;
+        };
+
+        home {
+            bindings = <&kp HOME>;
+            key-positions = <11 12 13 41 19>;
+        };
+
+        end {
+            bindings = <&kp END>;
+            key-positions = <11 12 13 19 21>;
+        };
+
+        pg_up {
+            bindings = <&kp PG_UP>;
+            key-positions = <11 12 13 41 18 20>;
+        };
+
+        pg_dn {
+            bindings = <&kp PAGE_DOWN>;
+            key-positions = <11 12 13 18 20 21>;
+        };
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <11 12 13 18 21>;
+        };
+
+        lang2 {
+            bindings = <&kp LANG2>;
+            key-positions = <11 12 13 41 18 21>;
+        };
     };
 
     macros {
@@ -85,8 +135,6 @@
 &kp Z      &kp X         &kp C         &kp V                      &kp SLASH      &kp LANGUAGE_2              &kp LANGUAGE_1  &kp G        &kp D              &kp M    &kp J  &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_KANA  &kp BACKSPACE  &lt_to_layer_0 3 LANG1      &kp BACKSPACE   &lt 1 SPACE                                     &kp DEL
             >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         FUNCTION {
