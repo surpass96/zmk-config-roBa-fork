@@ -138,12 +138,21 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        o24 {
             bindings = <
-&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                                   &kp F        &kp W              &lt 5 R  &kp Y  &kp P
+&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                                   &kp F        &kp W              &lt 6 R  &kp Y  &kp P
 &kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS      &kp CARET      &kp SLASH      &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
 &kp Z      &kp X         &kp C         &kp V             &kp SEMICOLON  &kp COLON      &kp BSLH       &kp G        &kp D              &kp M    &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 2 SPACE    &lt 3 TAB      &kp BACKSPACE  &lt 1 ENTER                                     &kp ESC
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 3 SPACE    &lt 4 TAB      &kp BACKSPACE  &lt 2 ENTER                                     &kp ESC
+            >;
+        };
+
+        o24-jis {
+            bindings = <
+&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                                   &kp F        &kp W              &lt 6 R  &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS      &kp EQUAL      &kp SLASH      &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
+&kp Z      &kp X         &kp C         &kp V             &kp SEMICOLON  &kp COLON      &kp INT3       &kp G        &kp D              &kp M    &kp J  &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 3 SPACE    &lt 4 TAB      &kp BACKSPACE  &lt 2 ENTER                                     &kp ESC
             >;
         };
 
