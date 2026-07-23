@@ -29,18 +29,78 @@
     combos {
         compatible = "zmk,combos";
 
-        PAR {
-            bindings = <&PAR>;
+        bkt {
+            bindings = <&M_BKT>;
             key-positions = <19 20>;
+        };
+
+        par {
+            bindings = <&M_PAR>;
+            key-positions = <7 8>;
+        };
+
+        brc {
+            bindings = <&M_BRC>;
+            key-positions = <31 32>;
+        };
+
+        dqt {
+            bindings = <&M_DQT>;
+            key-positions = <18 19>;
+        };
+
+        sqt {
+            bindings = <&M_SQT>;
+            key-positions = <6 7>;
+        };
+
+        grave {
+            bindings = <&M_GRAVE>;
+            key-positions = <30 31>;
         };
     };
 
     macros {
-        PAR: new_macro {
+        M_PAR: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LPAR &kp RPAR &kp LEFT>;
             label = "NEW_MACRO";
+        };
+
+        M_BKT: BKT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            label = "BKT";
+        };
+
+        M_BRC: BRC {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            label = "BRC";
+        };
+
+        M_DQT: DQT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp DQT &kp LEFT>;
+            label = "DQT";
+        };
+
+        M_SQT: SQT {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
+            label = "SQT";
+        };
+
+        M_GRAVE: GRAVE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
+            label = "GRAVE";
         };
     };
 
