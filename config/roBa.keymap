@@ -29,32 +29,32 @@
     combos {
         compatible = "zmk,combos";
 
-        bkt {
+        c_bkt {
             bindings = <&M_BKT>;
             key-positions = <19 20>;
         };
 
-        par {
+        c_par {
             bindings = <&M_PAR>;
             key-positions = <7 8>;
         };
 
-        brc {
+        c_brc {
             bindings = <&M_BRC>;
             key-positions = <31 32>;
         };
 
-        dqt {
+        c_dqt {
             bindings = <&M_DQT>;
             key-positions = <18 19>;
         };
 
-        sqt {
+        c_sqt {
             bindings = <&M_SQT>;
             key-positions = <6 7>;
         };
 
-        grave {
+        c_grave {
             bindings = <&M_GRAVE>;
             key-positions = <30 31>;
         };
