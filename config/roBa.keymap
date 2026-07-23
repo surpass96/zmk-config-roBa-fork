@@ -30,77 +30,77 @@
         compatible = "zmk,combos";
 
         c_bkt {
-            bindings = <&M_BKT>;
+            bindings = <&m_bkt>;
             key-positions = <19 20>;
         };
 
         c_par {
-            bindings = <&M_PAR>;
+            bindings = <&m_par>;
             key-positions = <7 8>;
         };
 
         c_brc {
-            bindings = <&M_BRC>;
+            bindings = <&m_brc>;
             key-positions = <31 32>;
         };
 
         c_dqt {
-            bindings = <&M_DQT>;
+            bindings = <&m_dqt>;
             key-positions = <18 19>;
         };
 
         c_sqt {
-            bindings = <&M_SQT>;
+            bindings = <&m_sqt>;
             key-positions = <6 7>;
         };
 
         c_grave {
-            bindings = <&M_GRAVE>;
+            bindings = <&m_grave>;
             key-positions = <30 31>;
         };
     };
 
     macros {
-        M_PAR: new_macro {
+        m_par: m_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LPAR &kp RPAR &kp LEFT>;
-            label = "NEW_MACRO";
+            label = "m_par";
         };
 
-        M_BKT: BKT {
+        m_bkt: m_bkt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBKT &kp RBKT &kp LEFT>;
-            label = "BKT";
+            label = "m_bkt";
         };
 
-        M_BRC: BRC {
+        m_brc: m_brc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LBRC &kp RBRC &kp LEFT>;
-            label = "BRC";
+            label = "m_brc";
         };
 
-        M_DQT: DQT {
+        m_dqt: m_dqt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp DQT &kp DQT &kp LEFT>;
-            label = "DQT";
+            label = "m_dqt";
         };
 
-        M_SQT: SQT {
+        m_sqt: m_sqt {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp SQT &kp SQT &kp LEFT>;
-            label = "SQT";
+            label = "m_sqt";
         };
 
-        M_GRAVE: GRAVE {
+        m_grave: m_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
-            label = "GRAVE";
+            label = "m_grave";
         };
     };
 
