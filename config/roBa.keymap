@@ -29,98 +29,18 @@
     combos {
         compatible = "zmk,combos";
 
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <40 18>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <18 19>;
-        };
-
-        enter {
-            bindings = <&kp ENTER>;
+        PAR {
+            bindings = <&PAR>;
             key-positions = <19 20>;
-        };
-
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <20 21>;
-        };
-
-        space {
-            bindings = <&kp SPACE>;
-            key-positions = <18 20>;
-        };
-
-        up {
-            bindings = <&kp UP_ARROW>;
-            key-positions = <11 12 13 41>;
-        };
-
-        left {
-            bindings = <&kp LEFT>;
-            key-positions = <11 12 13 18>;
-        };
-
-        right {
-            bindings = <&kp RIGHT>;
-            key-positions = <11 12 13 20>;
-        };
-
-        down {
-            bindings = <&kp DOWN>;
-            key-positions = <11 12 13 21>;
-        };
-
-        home {
-            bindings = <&kp HOME>;
-            key-positions = <11 12 13 41 19>;
-        };
-
-        end {
-            bindings = <&kp END>;
-            key-positions = <11 12 13 19 21>;
-        };
-
-        pg_up {
-            bindings = <&kp PG_UP>;
-            key-positions = <11 12 13 41 18 20>;
-        };
-
-        pg_dn {
-            bindings = <&kp PAGE_DOWN>;
-            key-positions = <11 12 13 18 20 21>;
-        };
-
-        esc {
-            bindings = <&kp ESC>;
-            key-positions = <11 12 13 18 21>;
-        };
-
-        japanese_mode {
-            bindings = <&kp LANG1>;
-            key-positions = <11 12 13 18 19 20>;
-        };
-
-        english_mode {
-            bindings = <&kp LANGUAGE_2>;
-            key-positions = <11 12 13 41 21>;
-        };
-
-        jpn_eng_change {
-            bindings = <&kp LANG5>;
-            key-positions = <11 12 13 21 18 41>;
         };
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
+        PAR: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+            label = "NEW_MACRO";
         };
     };
 
