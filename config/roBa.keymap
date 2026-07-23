@@ -140,28 +140,28 @@
 
         o24 {
             bindings = <
-&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                                   &kp F        &kp W              &lt 5 R  &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS      &kp CARET      &kp SLASH      &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
-&kp Z      &kp X         &kp C         &kp V             &kp SEMICOLON  &kp COLON      &kp BSLH       &kp G        &kp D              &kp M    &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 2 SPACE    &lt 3 TAB      &kp BACKSPACE  &lt 1 ENTER                                     &kp ESC
+&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                                 &kp F        &kp W              &lt 5 R  &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS    &kp SEMI       &kp CARET      &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
+&kp Z      &kp X         &kp C         &kp V             &kp FSLH     &kp COLON      &kp AT         &kp G        &kp D              &kp M    &kp J  &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &kp LEFT_SHIFT    &lt 2 SPACE  &lt 3 TAB      &kp BACKSPACE  &lt 1 ENTER                                     &kp ESC
             >;
         };
 
         FUNCTION {
             bindings = <
-&trans  &kp LS(N7)  &kp LS(N8)  &kp LS(N9)  &trans                      &trans  &kp LBKT  &kp RBKT  &kp PIPE  &trans
-&trans  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &trans  &trans      &trans  &trans  &kp LPAR  &kp RPAR  &kp AT    &trans
-&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &trans  &trans      &trans  &trans  &kp LBRC  &kp RBRC  &trans    &trans
-&trans  &trans      &trans      &trans      &trans  &trans      &trans  &trans                                &trans
+&none     &none    &none     &none     &none                          &none     &none    &kp LBKT  &kp RBKT  &trans
+&kp EXCL  &kp DQT  &kp HASH  &kp DLLR  &kp PRCNT  &trans      &trans  &kp AMPS  &kp SQT  &kp LPAR  &kp RPAR  &trans
+&none     &none    &none     &none     &none      &trans      &trans  &none     &none    &kp LBRC  &kp RBRC  &trans
+&trans    &trans   &trans    &trans    &trans     &trans      &trans  &trans                                 &trans
             >;
         };
 
         NUM {
             bindings = <
-&kp SLASH  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS                      &trans  &kp F7  &kp F8  &kp F9  &kp F12
-&kp ASTRK  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp PLUS   &trans      &trans  &trans  &kp F4  &kp F5  &kp F6  &kp F11
-&trans     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL  &trans      &trans  &trans  &kp F1  &kp F2  &kp F3  &kp F10
-&trans     &kp N0        &kp PERIOD    &trans        &trans     &trans      &trans  &trans                          &trans
+&kp F1  &kp F2   &kp F3   &kp F4   &kp ESC                                &kp FSLH    &kp N7  &kp N8  &kp N9  &kp ASTRK
+&kp F5  &kp F6   &kp F7   &kp F8   &kp PRINTSCREEN  &none       &none     &kp N0      &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp F9  &kp F10  &kp F11  &kp F12  &none            &none       &none     &kp PERIOD  &kp N1  &kp N2  &kp N3  &kp MINUS
+&none   &none    &none    &trans   &trans           &trans      &kp BSPC  &kp EQUAL                           &none
             >;
         };
 
