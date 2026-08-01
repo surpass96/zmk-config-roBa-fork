@@ -130,8 +130,8 @@
 
         o24 {
             bindings = <
-&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                             &kp F        &kp W              &lt 5 R  &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS    &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
+&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                             &kp F        &kp W              &kp R    &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS    &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
 &kp Z      &kp X         &kp C         &kp V             &kp FSLH     &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 TAB         &lt 2 SPACE  &kp LSHFT      &kp BSPC   &lt 1 ENTER                                     &kp ESC
             >;
@@ -167,8 +167,8 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &trans    &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &none     &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &mkp MB3  &mkp MB5  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
