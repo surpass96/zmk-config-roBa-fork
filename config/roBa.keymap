@@ -190,5 +190,14 @@
 &kp ESC         &kp ENTER  &kp LEFT_ALT  &mkp MB4  &kp SPACE  &mkp MB5      &trans  &trans                          &trans
             >;
         };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                         &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&trans  &trans  &trans  &trans  &trans  &trans      &none      &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&trans  &trans  &trans  &trans  &trans  &none       &none      &kp N0     &kp N1  &kp N2  &kp N3  &kp PERIOD
+&trans  &trans  &trans  &trans  &trans  &trans      &kp ENTER  &kp N0                             &none
+            >;
+        };
     };
 };
