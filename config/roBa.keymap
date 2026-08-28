@@ -133,7 +133,16 @@
 &kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                             &kp F        &kp W              &kp R    &kp Y  &kp P
 &kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS    &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
 &kp Z      &kp X         &kp C         &kp V             &kp FSLH     &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 TAB         &lt 2 SPACE  &kp LSHFT      &kp BSPC   &lt 1 ENTER                                     &kp ESC
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2       &lt 1 SPACE  &lt 2 TAB      &kp BSPC   &lt 2 ENTER                                     &kp ESC
+            >;
+        };
+
+        NUM {
+            bindings = <
+&kp COLON  &kp DOUBLE_QUOTES  &kp TILDE  &kp EXCL  &kp QMARK                       &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp BSLH   &kp AMPS           &kp HASH   &kp LBKT  &kp RBKT   &none       &none    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp DLLR   &kp AT             &kp PRCNT  &kp LPAR  &kp RPAR   &none       &none    &kp N0     &kp N1  &kp N2  &kp N3  &kp UNDER
+&none      &none              &none      &trans    &trans     &trans      &kp DEL  &kp EQUAL                          &none
             >;
         };
 
@@ -143,15 +152,6 @@
 &kp N1    &kp N2     &kp N3    &kp N4    &kp N5     &kp ASTRK      &kp PLUS  &kp N6    &kp N7     &kp N8    &kp N9   &kp N0
 &kp F1    &kp F2     &kp F3    &kp F4    &kp F5     &kp F6         &kp F7    &kp F8    &kp F9     &kp F10   &kp F11  &kp F12
 &trans    &trans     &trans    &trans    &trans     &trans         &kp BSPC  &trans                                  &trans
-            >;
-        };
-
-        NUM {
-            bindings = <
-&kp F1  &kp F2   &kp F3   &kp F4   &kp ESC                                &kp FSLH    &kp N7  &kp N8  &kp N9  &kp ASTRK
-&kp F5  &kp F6   &kp F7   &kp F8   &kp PRINTSCREEN  &none       &none     &kp PERIOD  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp F9  &kp F10  &kp F11  &kp F12  &none            &none       &none     &kp N0      &kp N1  &kp N2  &kp N3  &kp MINUS
-&none   &none    &none    &trans   &trans           &trans      &kp BSPC  &kp EQUAL                           &none
             >;
         };
 
