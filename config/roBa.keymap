@@ -142,19 +142,19 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_minus_tilde: mo_minus_tilde {
+        mo_minus_under: mo_minus_under {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_MINUS_TILDE";
-            bindings = <&kp MINUS>, <&kp TILDE>;
+            label = "MO_MINUS_UNDER";
+            bindings = <&kp MINUS>, <&kp UNDER>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_fslh_under: mo_fslh_under {
+        mo_colon_hash: mo_colon_hash {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_FSLH_UNDER";
-            bindings = <&kp FSLH>, <&kp UNDER>;
+            label = "MO_COLON_HASH";
+            bindings = <&kp COLON>, <&kp HASH>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -166,19 +166,19 @@
 
         o24 {
             bindings = <
-&kp Q      &kp L         &kp U         &kp COMMA         &kp PERIOD                             &kp F        &kp W              &kp R    &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &kp MINUS    &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
-&kp Z      &kp X         &kp C         &kp V             &kp FSLH     &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2       &lt 1 SPACE  &lt 2 TAB      &kp BSPC   &lt 2 ENTER                                     &kp ESC
+&kp Q      &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                              &kp F        &kp W              &kp R    &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
+&kp Z      &kp X         &kp C         &kp V             &mo_colon_hash   &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2       &lt 1 SPACE      &lt 2 TAB      &kp BSPC   &lt 2 ENTER                                     &kp ESC
             >;
         };
 
         NUM {
             bindings = <
-&kp COLON  &kp DOUBLE_QUOTES  &kp TILDE  &kp EXCL  &kp QMARK                       &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp BSLH   &kp AMPS           &kp HASH   &kp LBKT  &kp TILDE  &none       &none    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp DLLR   &kp AT             &kp PRCNT  &kp LPAR  &kp BSLH   &none       &none    &kp N0     &kp N1  &kp N2  &kp N3  &kp UNDER
-&none      &none              &none      &trans    &trans     &trans      &kp DEL  &kp EQUAL                          &none
+&kp PIPE   &kp DLLR   &kp PRCNT  &kp AMPS   &kp BSLH                        &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp AT     &kp CARET  &kp LT     &kp GT     &kp TILDE  &none       &none    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp SEMI   &none       &none    &kp N0     &kp N1  &kp N2  &kp N3  &kp PERIOD
+&none      &none      &none      &trans     &trans     &trans      &kp DEL  &kp EQUAL                          &none
             >;
         };
 
@@ -202,8 +202,8 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &none     &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &mkp MB3  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &none     &mkp MB2  &kp RIGHT_SHIFT
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4  &mkp MB3  &mkp MB5  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
@@ -229,10 +229,10 @@
 
         game {
             bindings = <
-&kp TAB         &kp Q      &kp X         &kp E     &kp R                            &trans  &kp N7  &kp N8  &kp N9  &trans
-&kp LEFT_SHIFT  &kp A      &kp W         &kp D     &kp F      &kp G         &trans  &trans  &kp N4  &kp N5  &kp N6  &trans
-&kp LCTRL       &kp Z      &kp S         &kp C     &kp V      &kp B         &trans  &trans  &kp N1  &kp N2  &kp N3  &trans
-&kp ESC         &kp ENTER  &kp LEFT_ALT  &mkp MB4  &kp SPACE  &mkp MB5      &trans  &trans                          &trans
+&kp ESCAPE      &kp Q      &kp X         &kp E     &kp R                            &trans  &kp N7  &kp N8  &kp N9  &trans
+&kp TAB         &kp A      &kp W         &kp D     &kp F      &kp G         &trans  &trans  &kp N4  &kp N5  &kp N6  &trans
+&kp LEFT_SHIFT  &kp Z      &kp S         &kp C     &kp V      &kp B         &trans  &trans  &kp N1  &kp N2  &kp N3  &trans
+&kp LCTRL       &kp ENTER  &kp LEFT_ALT  &mkp MB4  &kp SPACE  &mkp MB5      &trans  &trans                          &trans
             >;
         };
     };
