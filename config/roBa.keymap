@@ -123,6 +123,42 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        mo_comma_excl: mo_comma_excl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_COMMA_EXCL";
+            bindings = <&kp COMMA>, <&kp EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mo_dot_qmark: mo_dot_qmark {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_DOT_QMARK";
+            bindings = <&kp DOT>, <&kp QMARK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mo_minus_tilde: mo_minus_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_MINUS_TILDE";
+            bindings = <&kp MINUS>, <&kp TILDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mo_fslh_under: mo_fslh_under {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_FSLH_UNDER";
+            bindings = <&kp FSLH>, <&kp UNDER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -140,8 +176,8 @@
         NUM {
             bindings = <
 &kp COLON  &kp DOUBLE_QUOTES  &kp TILDE  &kp EXCL  &kp QMARK                       &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp BSLH   &kp AMPS           &kp HASH   &kp LBKT  &kp RBKT   &none       &none    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp DLLR   &kp AT             &kp PRCNT  &kp LPAR  &kp RPAR   &none       &none    &kp N0     &kp N1  &kp N2  &kp N3  &kp UNDER
+&kp BSLH   &kp AMPS           &kp HASH   &kp LBKT  &kp TILDE  &none       &none    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp DLLR   &kp AT             &kp PRCNT  &kp LPAR  &kp BSLH   &none       &none    &kp N0     &kp N1  &kp N2  &kp N3  &kp UNDER
 &none      &none              &none      &trans    &trans     &trans      &kp DEL  &kp EQUAL                          &none
             >;
         };
