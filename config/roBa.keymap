@@ -167,7 +167,7 @@
         o24 {
             bindings = <
 &kp Q      &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                              &kp F        &kp W              &kp R    &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp AT         &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC        &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
 &kp Z      &kp X         &kp C         &kp V             &mo_colon_hash   &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2       &lt 1 SPACE      &lt 2 TAB      &kp BSPC   &lt 2 ENTER                                     &kp ESC
             >;
