@@ -175,10 +175,10 @@
 
         O24 {
             bindings = <
-&td_q_esc  &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                              &kp F        &kp W              &kp R    &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC        &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
-&kp Z      &kp X         &kp C         &kp V             &mo_colon_hash   &kp BSLH       &kp SEMI   &kp G        &kp D              &kp M    &kp J  &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2       &lt 1 SPACE      &lt 2 TAB      &kp BSPC   &lt 2 ENTER                                     &kp ESC
+&td_q_esc  &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                                &kp F        &kp W              &kp R    &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC        &kp LG(TAB)  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
+&kp Z      &kp X         &kp C         &kp V             &mo_colon_hash   &kp BSLH       &kp SEMI     &kp G        &kp D              &kp M    &kp J  &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 2 LANG2       &lt 1 SPACE      &lt 4 TAB      &kp BSPC     &lt 4 ENTER                                     &kp ESC
             >;
         };
 
@@ -191,21 +191,21 @@
             >;
         };
 
+        NAV {
+            bindings = <
+&kp K_MUTE    &kp LC(LG(LEFT))        &kp LG(TAB)    &kp LC(TAB)              &kp C_BRI_UP                         &kp LC(LS(T))  &kp HOME         &kp F5     &kp END        &kp LC(F)
+&kp C_VOL_UP  &kp LG(LC(LEFT_ARROW))  &kp LC(LS(T))  &kp LG(LC(RIGHT_ARROW))  &kp C_BRI_UP     &trans      &trans  &kp LC(T)      &kp LS(LC(TAB))  &kp F11    &kp LC(TAB)    &kp PG_UP
+&kp C_VOL_DN  &kp LA(LEFT)            &kp LG(C_PP)   &kp LA(RIGHT)            &kp PRINTSCREEN  &trans      &trans  &kp LC(W)      &kp LA(LEFT)     &kp LC(S)  &kp LA(RIGHT)  &kp PG_DN
+&trans        &trans                  &trans         &trans                   &trans           &trans      &trans  &trans                                                    &trans
+            >;
+        };
+
         FUNCTION {
             bindings = <
 &kp EXCL  &kp CARET  &kp HASH  &kp DLLR  &kp PRCNT                           &kp AMPS  &kp TILDE  &kp PIPE  &kp F11  &kp F12
 &kp N1    &kp N2     &kp N3    &kp N4    &kp N5     &kp ASTRK      &kp PLUS  &kp N6    &kp N7     &kp N8    &kp N9   &kp N0
 &kp F1    &kp F2     &kp F3    &kp F4    &kp F5     &kp F6         &kp F7    &kp F8    &kp F9     &kp F10   &kp F11  &kp F12
 &trans    &trans     &trans    &trans    &trans     &trans         &kp BSPC  &trans                                  &trans
-            >;
-        };
-
-        ARROW {
-            bindings = <
-&kp C_VOL_UP    &kp LS(LG(LEFT))    &kp LG(UP_ARROW)    &kp LG(LS(RIGHT))    &kp C_BRI_UP                         &kp PG_UP  &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp LC(T)
-&kp C_VOL_DN    &kp LG(LEFT_ARROW)  &kp LG(DOWN_ARROW)  &kp LG(RIGHT_ARROW)  &kp C_BRI_DN     &trans      &trans  &kp PG_DN  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LC(W)
-&kp LEFT_SHIFT  &kp C_PREV          &kp LG(C_PP)        &kp C_NEXT           &kp PRINTSCREEN  &trans      &trans  &trans     &kp HOME         &trans    &kp END      &trans
-&trans          &trans              &trans              &trans               &trans           &trans      &trans  &trans                                             &trans
             >;
         };
 
