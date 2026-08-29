@@ -164,7 +164,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        o24 {
+        O24 {
             bindings = <
 &kp Q      &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                              &kp F        &kp W              &kp R    &kp Y  &kp P
 &kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC        &kp COLON  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
