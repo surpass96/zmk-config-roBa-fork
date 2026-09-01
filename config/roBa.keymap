@@ -174,7 +174,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_LANG1_LANG2";
             #binding-cells = <0>;
-            bindings = <&lt 3 LANG1>, <&kp LANG2>;
+            bindings = <&kp LANG1>, <&kp LANG2>;
         };
     };
 
@@ -211,7 +211,7 @@
         FUNCTION {
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
-&none           &none         &none         &none         &none         &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
+&none           &none         &none         &none         &none         &sys_reset       &sl 6   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
 &none           &none         &none         &none         &none         &bootloader      &none   &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
 &bt BT_CLR_ALL  &bt BT_CLR    &out OUT_TOG  &kp LANG2     &trans        &trans           &trans  &trans                           &trans
             >;
@@ -239,7 +239,7 @@
             bindings = <
 &kp ESCAPE      &kp N1  &kp N2  &kp N3  &kp N4                               &kp FSLH         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS
 &kp TAB         &kp Q   &kp W   &kp E   &kp R      &kp T      &kp KP_NUM     &kp ASTRK        &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp PLUS
-&kp LEFT_SHIFT  &kp A   &kp S   &kp D   &kp F      &kp G      &trans         &kp PERIOD       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
+&kp LEFT_SHIFT  &kp A   &kp S   &kp D   &kp F      &kp G      &sl 0          &kp PERIOD       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp EQUAL
 &kp LCTRL       &kp Z   &kp X   &kp C   &kp SPACE  &kp V      &kp BACKSPACE  &kp KP_NUMBER_0                                                     &kp ENTER
             >;
         };
