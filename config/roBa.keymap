@@ -174,8 +174,8 @@
 
         O24 {
             bindings = <
-&td_q_esc  &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                                      &kp F        &kp W              &kp R    &kp Y  &kp P
-&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &mt RIGHT_SHIFT T  &lt 5 N  &kp S  &kp H
+&td_q_esc  &kp L         &kp U         &mo_comma_excl    &mo_dot_qmark                                      &kp F        &kp W              &lt 5 R  &kp Y  &kp P
+&kp E      &kp I         &kp A         &mt LEFT_SHIFT O  &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &mt RIGHT_SHIFT T  &kp N    &kp S  &kp H
 &kp Z      &kp X         &kp C         &kp V             &mo_colon_hash   &kp LC(LS(ESC))      &kp LG(V)    &kp G        &kp D              &kp M    &kp J  &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_lang1_lang2   &lt 1 SPACE      &lt 2 TAB            &kp BSPC     &lt 3 ENTER                                     &kp CAPS
             >;
@@ -210,8 +210,8 @@
 
         MOUSE {
             bindings = <
-&trans  &kp F2          &msc SCRL_UP    &kp F11          &trans                      &kp RC(RS(T))  &mkp MB4         &mkp MB3  &mkp MB5     &kp RC(R)
-&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans      &trans  &kp RC(T)      &mkp MB1         &none     &mkp MB2     &kp RC(F)
+&trans  &kp F2          &msc SCRL_UP    &kp F11          &trans                      &kp RC(RS(T))  &mkp MB4         &mo 5     &mkp MB5     &kp RC(R)
+&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans      &trans  &kp RC(T)      &mkp MB1         &mkp MB3  &mkp MB2     &kp RC(F)
 &trans  &kp LA(LEFT)    &kp F5          &kp LA(RIGHT)    &trans  &trans      &trans  &kp RC(W)      &kp RC(RS(TAB))  &kp ESC   &kp RC(TAB)  &kp RC(L)
 &trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans                                                 &trans
             >;
