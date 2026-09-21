@@ -210,7 +210,7 @@
 
         MOUSE {
             bindings = <
-&trans  &kp F2          &msc SCRL_UP    &kp F11          &trans                      &kp RC(RS(T))  &mkp MB4         &mo 5     &mkp MB5     &kp RC(R)
+&trans  &kp F2          &msc SCRL_UP    &kp F11          &trans                      &kp RC(RS(T))  &mkp MB4         &trans    &mkp MB5     &kp RC(R)
 &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans  &trans      &trans  &kp RC(T)      &mkp MB1         &mkp MB3  &mkp MB2     &kp RC(F)
 &trans  &kp LA(LEFT)    &kp F5          &kp LA(RIGHT)    &trans  &trans      &trans  &kp RC(W)      &kp RC(RS(TAB))  &kp ESC   &kp RC(TAB)  &kp RC(L)
 &trans  &trans          &trans          &trans           &trans  &trans      &trans  &trans                                                 &trans
