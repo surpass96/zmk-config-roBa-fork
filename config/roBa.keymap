@@ -204,7 +204,7 @@
 &td_q_esc  &kp L         &kp U          &mo_comma_excl      &mo_dot_qmark                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
 &kp Z      &kp X         &kp C          &kp V               &mo_colon_hash   &kp LC(LS(ESC))      &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &td_lang1_lang2     &lt SYM SPACE    &lt NAV TAB          &kp BSPC     &lt FUNC ENTER                                                         &kp CAPS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &td_lang1_lang2     &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
             >;
         };
 
@@ -218,23 +218,29 @@
             >;
         };
 
+        // NAV（右親指 Enter 長押し）
+        //   左手: 移動と編集。I/A/O/U = ←↓→↑（逆T字）、その周りに Home/End/PgUp/PgDn、下段は Z X C V の位置のまま Undo/Cut/Copy/Paste
+        //   右手: ホームロウ = 修飾キー（T/N/S/H と同じ指 = Shift/Ctrl/Alt/Win）、上段 = 音量・輝度、下段 = 画面系
         NAV {
             display-name = "NAV";
             bindings = <
-&kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN    &kp C_BRI_UP                           &kp RC(F)  &kp HOME   &kp UP     &kp END    &kp RC(X)
-&kp LGUI    &kp LALT      &kp LCTRL     &kp LSHFT       &kp PSCRN     &trans       &kp PG_UP   &kp RC(A)  &kp LEFT   &kp DOWN   &kp RIGHT  &kp RC(C)
-&kp LC(Z)   &kp LC(Y)     &kp LG(D)     &kp LG(LS(S))   &trans        &trans       &kp PG_DN   &kp RC(S)  &kp BSPC   &kp ENTER  &kp DEL    &kp RC(V)
-&trans      &trans        &trans        &trans          &trans        &trans       &kp RCTRL   &kp RSHFT                                     &trans
+&kp PG_UP  &kp HOME   &kp UP     &kp END    &kp DEL                            &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &kp C_BRI_DN  &kp C_BRI_UP
+&kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp BSPC   &trans          &trans  &none       &kp RSHFT     &kp RCTRL      &kp LALT      &kp RGUI
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(Y)  &trans          &trans  &kp PSCRN   &kp LG(LS(S)) &kp LG(D)      &none         &none
+&trans     &trans     &trans     &trans     &trans     &trans          &trans  &trans                                                   &trans
             >;
         };
 
+        // FUNC（左親指 Tab 長押し）
+        //   右手: F キー。F1〜F9 は SYM レイヤーの数字 1〜9 と同じ位置、右端の列が F10〜F12、内側の列が F13〜F15
+        //   左手: 上段 = BT 接続先 0〜4、ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）、下段・内側 = BT 解除・出力切替・リセット
         FUNC {
             display-name = "FUNC";
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
-&kp LGUI        &kp LALT      &kp LCTRL     &kp LSHFT     &none         &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
-&none           &none         &none         &none         &none         &bootloader      &none   &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
-&bt BT_CLR_ALL  &bt BT_CLR    &out OUT_TOG  &kp LANG2     &trans        &trans           &trans  &trans                           &trans
+&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
+&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &none         &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
+&bt BT_CLR      &out OUT_TOG   &none         &none         &none         &bootloader      &none   &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
+&bt BT_CLR_ALL  &none          &none         &trans        &trans        &trans           &trans  &trans                           &trans
             >;
         };
 
