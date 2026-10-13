@@ -26,14 +26,17 @@
     combos {
         compatible = "zmk,combos";
 
-        c_lang1 {
-            bindings = <&kp LANG1>;
-            key-positions = <18 19 20>;
+        // IME 切替は親指 2 キーの同時押し（Mac と同じく 左 = 英数 / 右 = かな）
+        c_eisu {
+            bindings = <&kp LANG2>;
+            key-positions = <37 38>;   // 左親指: ワンショット Shift + Space
+            timeout-ms = <40>;
         };
 
-        c_lang2 {
-            bindings = <&kp LANG2>;
-            key-positions = <11 12 13>;
+        c_kana {
+            bindings = <&kp LANG1>;
+            key-positions = <40 41>;   // 右親指: BS + Enter
+            timeout-ms = <40>;
         };
     };
 
@@ -84,12 +87,6 @@
             tapping-term-ms = <200>;
         };
 
-        td_lang1_lang2: td_lang1_lang2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_LANG1_LANG2";
-            #binding-cells = <0>;
-            bindings = <&kp LANG1>, <&kp LANG2>;
-        };
 
         // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
         hml: hml {
@@ -131,7 +128,7 @@
 &td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
 &kp Z      &kp X         &kp C          &kp V               &kp SEMI         &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &td_lang1_lang2     &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
             >;
         };
 
