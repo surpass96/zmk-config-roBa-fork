@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: roBa}
 layers:
-  O24:
+  BASE:
   - '&td_q_esc'
   - L
   - U
@@ -12,16 +12,16 @@ layers:
   - Y
   - P
   - E
-  - I
-  - A
-  - {t: O, h: LEFT SHIFT}
+  - {t: I, h: LALT}
+  - {t: A, h: LCTRL}
+  - {t: O, h: LSHFT}
   - {t: '-', s: _}
   - ESC
   - Gui+TAB
   - K
-  - {t: T, h: RIGHT SHIFT}
-  - N
-  - S
+  - {t: T, h: RSHFT}
+  - {t: N, h: RCTRL}
+  - {t: S, h: LALT}
   - H
   - Z
   - X
@@ -39,100 +39,100 @@ layers:
   - LEFT WIN
   - LEFT ALT
   - '&td_lang1_lang2'
-  - {t: SPACE, h: NUM}
-  - {t: TAB, h: NAV}
+  - {t: SPACE, h: SYM}
+  - {t: TAB, h: FUNC}
   - BSPC
-  - {t: ENTER, h: FUNCTION}
+  - {t: ENTER, h: NAV}
   - CAPS
-  NUM:
-  - '|'
+  SYM:
+  - '!'
+  - '@'
+  - '#'
   - $
   - '%'
-  - '&'
-  - \
   - /
-  - KP 7
-  - KP 8
-  - KP 9
+  - '7'
+  - '8'
+  - '9'
   - '-'
-  - '@'
-  - ^
   - <
   - '>'
+  - '"'
+  - ''''
+  - '`'
   - '~'
-  - ''
-  - KP NUM
-  - '*'
-  - KP 4
-  - KP 5
-  - KP 6
-  - +
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
   - ;
-  - ''
-  - ''
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - '{'
+  - '['
+  - (
+  - )
+  - ']'
+  - '}'
+  - ^
   - .
-  - KP 1
-  - KP 2
-  - KP 3
+  - '1'
+  - '2'
+  - '3'
   - '='
-  - ''
-  - ''
-  - ''
+  - \
+  - '|'
+  - '&'
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - DEL
-  - KP 0
+  - '0'
   - ENTER
   NAV:
   - MUTE
-  - Ctl+Gui+LEFT
-  - Gui+UP
-  - Ctl+Gui+RIGHT
-  - PRINTSCREEN
-  - Ctl+F
+  - VOL DN
+  - VOL UP
+  - BRI DN
+  - BRI UP
+  - DEL
   - HOME
   - UP
   - END
-  - Ctl+X
-  - VOL UP
-  - Gui+LEFT ARROW
-  - Gui+DOWN
-  - Gui+RIGHT ARROW
-  - BRI UP
+  - PG UP
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+A
+  - BSPC
   - LEFT
   - DOWN
   - RIGHT
+  - PG DN
+  - Ctl+Z
+  - Ctl+X
   - Ctl+C
-  - VOL DN
-  - Alt+LEFT
-  - Gui+D
-  - Alt+RIGHT
-  - BRI DN
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - Ctl+S
-  - BACKSPACE
-  - ENTER
-  - DELETE
   - Ctl+V
+  - Ctl+Y
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - PSCRN
+  - Gui+Sft+S
+  - Gui+D
+  - ''
+  - ''
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - RCTRL
-  - RSHFT
   - {t: ▽, type: trans}
-  FUNCTION:
+  FUNC:
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
@@ -143,20 +143,20 @@ layers:
   - F8
   - F9
   - F12
-  - ''
-  - ''
-  - ''
-  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
   - ''
   - '&sys_reset'
-  - {t: game, h: toggle}
+  - ''
   - F14
   - F4
   - F5
   - F6
   - F11
-  - ''
-  - ''
+  - BT CLR
+  - OUT TOG
   - ''
   - ''
   - ''
@@ -168,29 +168,29 @@ layers:
   - F3
   - F10
   - BT CLR ALL
-  - BT CLR
-  - OUT TOG
-  - LANG2
-  - {t: ▽, type: trans}
+  - ''
+  - ''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   MOUSE:
   - {t: ▽, type: trans}
-  - F2
-  - '&msc SCRL_UP'
-  - F11
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - Ctl+Sft+T
   - '&mkp MB4'
-  - {t: ▽, type: trans}
+  - SCROLL
   - '&mkp MB5'
   - Ctl+R
   - {t: ▽, type: trans}
-  - '&msc SCRL_LEFT'
-  - '&msc SCRL_DOWN'
-  - '&msc SCRL_RIGHT'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -200,9 +200,9 @@ layers:
   - '&mkp MB2'
   - Ctl+F
   - {t: ▽, type: trans}
-  - Alt+LEFT
-  - F5
-  - Alt+RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,50 +264,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  game:
-  - ESCAPE
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - /
-  - KP 7
-  - KP 8
-  - KP 9
-  - '-'
-  - TAB
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - KP NUM
-  - '*'
-  - KP 4
-  - KP 5
-  - KP 6
-  - +
-  - LEFT SHIFT
-  - A
-  - S
-  - D
-  - F
-  - G
-  - {t: O24, h: toggle}
-  - .
-  - KP 1
-  - KP 2
-  - KP 3
-  - '='
-  - LCTRL
-  - Z
-  - X
-  - C
-  - SPACE
-  - V
-  - BACKSPACE
-  - KP 0
-  - ENTER
 combos:
 - p: [19, 20]
   k: '&m_bkt'
