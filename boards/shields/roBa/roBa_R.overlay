@@ -20,8 +20,8 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        // ボールを動かすと MOUSE レイヤー(4)を ON、最後の動きから 700ms で OFF
-        input-processors = <&zip_temp_layer 4 700>;
+        // ボールを動かすと MOUSE レイヤー(5)を ON、最後の動きから 700ms で OFF
+        input-processors = <&zip_temp_layer 5 700>;
     };
 };
 

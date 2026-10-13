@@ -13,10 +13,12 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ## レイヤー構成
 
-0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：記号＋テンキー） / 2 NAV（右親指 Enter 長押し：右手に矢印、左手に修飾キー・編集・音量） / 3 FUNC（左親指 Tab 長押し：右手に F キー、左手に BT・修飾キー・システム） / 4 MOUSE（自動） / 5 SCROLL（全 &trans のモード用）
+0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：右手に記号） / 2 NUM（左親指 Tab 長押し：右手にテンキー） / 3 NAV（右親指 Enter 長押し：右手に矢印、左手に修飾キー・編集・音量） / 4 FUNC（Space＋Enter 両方長押しの conditional layer：左手に F キー、右手に BT・修飾キー） / 5 MOUSE（自動） / 6 SCROLL（全 &trans のモード用）
 
-- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV・FUNC の左ホームロウも同じ指＝同じ修飾キー。
-- 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 4 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
+利き手が右なので、数字・記号・矢印は右手に置く方針。BT・再起動・ブートローダは誤打防止のため 2 回連打（tap-dance）でのみ発動。
+
+- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NUM・NAV の左ホームロウ、FUNC の右ホームロウも同じ指＝同じ修飾キー。
+- 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 5 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
 - IME 切替はホーム段の人差し指＋中指の同時押しコンボ（左 A+O = 英数 LANG2 / 右 T+N = かな LANG1）。左親指外側はワンショット Shift。
 - スクロールは keymap の `&trackball { scroll-layers = <SCROLL>; }`。
 

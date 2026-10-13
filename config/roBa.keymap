@@ -6,10 +6,11 @@
 
 #define BASE 0
 #define SYM 1
-#define NAV 2
-#define FUNC 3
-#define MOUSE 4
-#define SCROLL 5
+#define NUM 2
+#define NAV 3
+#define FUNC 4
+#define MOUSE 5
+#define SCROLL 6
 
 // ホームロウモッド用: 反対側の手のキー＋親指キーが押された時だけ hold（修飾キー）として扱う
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36
@@ -23,6 +24,16 @@
 };
 
 / {
+    // Space（SYM）と Enter（NAV）を両方押さえると FUNC
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        func_layer {
+            if-layers = <SYM NAV>;
+            then-layer = <FUNC>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -89,6 +100,87 @@
         };
 
 
+        // 誤打防止: BT・再起動・ブートローダは 2 回連打した時だけ発動（1 回では何もしない）
+        td_bt0: td_bt0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT0";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_SEL 0>;
+        };
+
+        td_bt1: td_bt1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT1";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_SEL 1>;
+        };
+
+        td_bt2: td_bt2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT2";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_SEL 2>;
+        };
+
+        td_bt3: td_bt3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT3";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_SEL 3>;
+        };
+
+        td_bt4: td_bt4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT4";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_SEL 4>;
+        };
+
+        td_bt_clr: td_bt_clr {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT_CLR";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_CLR>;
+        };
+
+        td_bt_clr_all: td_bt_clr_all {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BT_CLR_ALL";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bt BT_CLR_ALL>;
+        };
+
+        td_out_tog: td_out_tog {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_OUT_TOG";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&out OUT_TOG>;
+        };
+
+        td_reset: td_reset {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RESET";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&sys_reset>;
+        };
+
+        td_boot: td_boot {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BOOT";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&none>, <&bootloader>;
+        };
+
         // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
@@ -129,23 +221,32 @@
 &td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
 &kp Z      &kp X         &kp C          &kp V               &kp SEMI         &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt NUM TAB          &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
             >;
         };
 
-        // SYM（左親指 Space 長押し）。Java で多い記号ほど押しやすい位置に
-        //   左上段 = US 配列の Shift+1〜5（! @ # $ %）
-        //   左中段 = 小指 = と、括弧の入れ子 { ( ) }（中指・人差し指が ( )）
-        //   左下段 = 引用符 " '（中指・人差し指）、外側に [ ]、両端に < >
-        //   左最下段 = ` | &
-        //   右手 = テンキー＋演算子（^ はべき乗として数字の横、: は BASE の ; と対）
+        // SYM（左親指 Space 長押し）。記号は右手
+        //   右上段 = @ & | + *、右中段 = % と括弧の入れ子 { ( ) } と =、右下段 = < [ " ' ] >
+        //   左手中段 = あまり使わない記号 ` ~ ^ $ #
         SYM {
             display-name = "SYM";
             bindings = <
-&kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                          &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp EQUAL  &kp LBRC   &kp LPAR   &kp RPAR   &kp RBRC   &kp TILDE   &kp COLON   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp LT     &kp LBKT   &kp DQT    &kp SQT    &kp RBKT   &kp GT      &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
-&kp GRAVE  &kp PIPE   &kp AMPS   &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
+&none      &none      &none      &none      &none                              &kp AT     &kp AMPS  &kp PIPE  &kp PLUS  &kp ASTRK
+&kp GRAVE  &kp TILDE  &kp CARET  &kp DLLR   &kp HASH   &none       &kp PRCNT   &kp LBRC   &kp LPAR  &kp RPAR  &kp RBRC  &kp EQUAL
+&none      &none      &none      &none      &none      &none       &kp LT      &kp LBKT   &kp DQT   &kp SQT   &kp RBKT  &kp GT
+&trans     &trans     &trans     &trans     &trans     &trans      &trans      &trans                                    &trans
+            >;
+        };
+
+        // NUM（左親指 Tab 長押し）。右手にテンキー＋演算子、0 は右親指
+        //   左手ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）
+        NUM {
+            display-name = "NUM";
+            bindings = <
+&none      &none      &none      &none      &none                              &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp COLON   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&none      &none      &none      &none      &none      &none       &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
+&trans     &trans     &trans     &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
             >;
         };
 
@@ -162,18 +263,18 @@
             >;
         };
 
-        // FUNC（左親指 Tab 長押し）
-        //   右手: F キー。F1〜F9 は SYM レイヤーの数字 1〜9 と同じ位置、右端の列が F10〜F12、内側の列が F13〜F15
-        //   左手: 上段 = BT 接続先 0〜4、ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）＋タスクマネージャ
-        //         最下段 = 全 BT 解除 / BT 解除 / USB・BT 切替
+        // FUNC（Space と Enter を両方押さえる）
+        //   左手: F1〜F12 を読む順（上段 F1〜F4、中段 F5〜F8、下段 F9〜F12）＋タスクマネージャ
+        //   右手: ホームロウ = 修飾キー（T/N/S/H = Shift/Ctrl/Alt/Win）、上段 = BT 接続先 0〜4、下段 = BT 解除 / USB・BT 切替 / 全 BT 解除
         //   左右の内側の列: 中段 = 再起動、下段 = ブートローダ（押した側の半分にだけ効く）
+        //   BT・再起動・ブートローダはすべて 2 回連打で発動
         FUNC {
             display-name = "FUNC";
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                                    &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
-&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &kp LC(LS(ESC)) &sys_reset       &sys_reset     &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
-&none           &none          &none         &none         &none           &bootloader      &bootloader    &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
-&bt BT_CLR_ALL  &bt BT_CLR     &out OUT_TOG  &trans        &trans          &trans           &trans         &trans                           &trans
+&kp F1     &kp F2     &kp F3     &kp F4     &none                                  &td_bt0    &td_bt1    &td_bt2     &td_bt3    &td_bt4
+&kp F5     &kp F6     &kp F7     &kp F8     &kp LC(LS(ESC))  &td_reset   &td_reset  &none      &kp RSHFT  &kp RCTRL   &kp LALT   &kp RGUI
+&kp F9     &kp F10    &kp F11    &kp F12    &none            &td_boot    &td_boot   &none      &td_bt_clr &td_out_tog &none      &td_bt_clr_all
+&trans     &trans     &trans     &trans     &trans           &trans      &trans     &trans                                        &trans
             >;
         };
 
