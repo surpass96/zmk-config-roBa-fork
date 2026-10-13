@@ -140,6 +140,15 @@
         };
 
 
+        mo_slash_bslh: mo_slash_bslh {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_SLASH_BSLH";
+            bindings = <&kp FSLH>, <&kp BSLH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         td_q_esc: td_q_esc {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q_ESC";
@@ -195,22 +204,24 @@
             bindings = <
 &td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
-&kp Z      &kp X         &kp C          &kp V               &kp SEMI         &kp LC(LS(ESC))      &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
+&kp Z      &kp X         &kp C          &kp V               &kp SEMI         &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &td_lang1_lang2     &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
             >;
         };
 
-        // SYM（左親指 Space 長押し）
-        //   右手内側 = :（BASE の ; と対）
-        //   左上段 = US 配列の Shift+1〜5（! @ # $ %）、左中段 = 山括弧と引用符、左下段 = 括弧の入れ子 { [ ( ) ] }、左最下段 = \ | &
-        //   右手 = テンキー＋演算子（^ はべき乗として数字の横）
+        // SYM（左親指 Space 長押し）。Java で多い記号ほど押しやすい位置に
+        //   左上段 = US 配列の Shift+1〜5（! @ # $ %）
+        //   左中段 = 小指 = と、括弧の入れ子 { ( ) }（中指・人差し指が ( )）
+        //   左下段 = 引用符 " '（中指・人差し指）、外側に [ ]、両端に < >
+        //   左最下段 = ` | &
+        //   右手 = テンキー＋演算子（^ はべき乗として数字の横、: は BASE の ; と対）
         SYM {
             display-name = "SYM";
             bindings = <
 &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                          &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp LT     &kp GT     &kp DQT    &kp SQT    &kp GRAVE  &kp TILDE   &kp COLON   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT   &kp RBRC    &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
-&kp BSLH   &kp PIPE   &kp AMPS   &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
+&kp EQUAL  &kp LBRC   &kp LPAR   &kp RPAR   &kp RBRC   &kp TILDE   &kp COLON   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp LT     &kp LBKT   &kp DQT    &kp SQT    &kp RBKT   &kp GT      &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
+&kp GRAVE  &kp PIPE   &kp AMPS   &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
             >;
         };
 
@@ -229,12 +240,12 @@
 
         // FUNC（左親指 Tab 長押し）
         //   右手: F キー。F1〜F9 は SYM レイヤーの数字 1〜9 と同じ位置、右端の列が F10〜F12、内側の列が F13〜F15
-        //   左手: 上段 = BT 接続先 0〜4、ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）、下段・内側 = BT 解除・出力切替・リセット
+        //   左手: 上段 = BT 接続先 0〜4、ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）＋タスクマネージャ、下段・内側 = BT 解除・出力切替・リセット
         FUNC {
             display-name = "FUNC";
             bindings = <
 &bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
-&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &none         &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
+&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &kp LC(LS(ESC)) &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
 &bt BT_CLR      &out OUT_TOG   &none         &none         &none         &bootloader      &none   &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
 &bt BT_CLR_ALL  &none          &none         &trans        &trans        &trans           &trans  &trans                           &trans
             >;
