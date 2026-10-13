@@ -208,13 +208,16 @@
             >;
         };
 
+        // SYM（左親指 Space 長押し）
+        //   左上段 = US 配列の Shift+1〜5（! @ # $ %）、左中段 = 山括弧と引用符、左下段 = 括弧の入れ子 { [ ( ) ] }、左最下段 = \ | &
+        //   右手 = テンキー＋演算子（^ はべき乗として数字の横）
         SYM {
             display-name = "SYM";
             bindings = <
-&kp PIPE   &kp DLLR   &kp PRCNT  &kp AMPS   &kp BSLH                           &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp AT     &kp TILDE  &kp LT     &kp GT     &kp DQT    &kp SQT     &kp SEMI    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT   &kp RBRC    &kp COMMA   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
-&kp GRAVE  &kp CARET  &trans     &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
+&kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                          &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp LT     &kp GT     &kp DQT    &kp SQT    &kp GRAVE  &kp TILDE   &kp SEMI    &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
+&kp LBRC   &kp LBKT   &kp LPAR   &kp RPAR   &kp RBKT   &kp RBRC    &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
+&kp BSLH   &kp PIPE   &kp AMPS   &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
             >;
         };
 
