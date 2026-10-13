@@ -13,9 +13,9 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ## レイヤー構成
 
-0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：記号＋テンキー） / 2 NAV（右親指 Enter 長押し：左手に矢印・編集、右手に修飾キー・音量） / 3 FUNC（左親指 Tab 長押し：右手に F キー、左手に BT・修飾キー・システム） / 4 MOUSE（自動） / 5 SCROLL（全 &trans のモード用）
+0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：記号＋テンキー） / 2 NAV（右親指 Enter 長押し：右手に矢印、左手に修飾キー・編集・音量） / 3 FUNC（左親指 Tab 長押し：右手に F キー、左手に BT・修飾キー・システム） / 4 MOUSE（自動） / 5 SCROLL（全 &trans のモード用）
 
-- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV の右ホームロウ・FUNC の左ホームロウも同じ指＝同じ修飾キー。
+- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV・FUNC の左ホームロウも同じ指＝同じ修飾キー。
 - 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 4 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
 - スクロールは keymap の `&trackball { scroll-layers = <SCROLL>; }`。
 
