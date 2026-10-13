@@ -17,7 +17,7 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 - ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV・FUNC の左ホームロウも同じ指＝同じ修飾キー。
 - 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 4 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
-- IME 切替は下段の人差し指＋中指の同時押しコンボ（左 C+V = 英数 LANG2 / 右 D+M = かな LANG1）。左親指外側はワンショット Shift。
+- IME 切替はホーム段の人差し指＋中指の同時押しコンボ（左 A+O = 英数 LANG2 / 右 T+N = かな LANG1）。左親指外側はワンショット Shift。
 - スクロールは keymap の `&trackball { scroll-layers = <SCROLL>; }`。
 
 レイヤーを追加・並べ替えする時は、keymap 冒頭の `#define` と roBa_R.overlay のレイヤー番号を合わせて更新すること。

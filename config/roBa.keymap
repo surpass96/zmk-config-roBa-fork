@@ -27,17 +27,17 @@
         compatible = "zmk,combos";
 
         // IME 切替は人差し指＋中指の同時押し（左 = 英数 / 右 = かな）
-        // ホーム段は "ao" "nt" などの連続打鍵で誤爆するので、連続で打つことがほぼない下段に置く
+        // "ao" "nt" などを速く打つと重なって誤爆しうるので、判定時間は短めにしている
         c_eisu {
             bindings = <&kp LANG2>;
-            key-positions = <24 25>;   // 左: C + V
-            timeout-ms = <35>;
+            key-positions = <12 13>;   // 左: A + O
+            timeout-ms = <30>;
         };
 
         c_kana {
             bindings = <&kp LANG1>;
-            key-positions = <30 31>;   // 右: D + M
-            timeout-ms = <35>;
+            key-positions = <18 19>;   // 右: T + N
+            timeout-ms = <30>;
         };
     };
 
