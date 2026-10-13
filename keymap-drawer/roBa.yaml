@@ -40,51 +40,95 @@ layers:
   - LEFT ALT
   - {t: LSHFT, h: sticky}
   - {t: SPACE, h: SYM}
-  - {t: TAB, h: FUNC}
+  - {t: TAB, h: NUM}
   - BSPC
   - {t: ENTER, h: NAV}
   - CAPS
   SYM:
-  - '!'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - '@'
-  - '#'
+  - '&'
+  - '|'
+  - +
+  - '*'
+  - '`'
+  - '~'
+  - ^
   - $
+  - '#'
+  - ''
   - '%'
-  - /
-  - '7'
-  - '8'
-  - '9'
-  - '-'
-  - '='
   - '{'
   - (
   - )
   - '}'
-  - '~'
-  - ':'
-  - '*'
-  - '4'
-  - '5'
-  - '6'
-  - +
+  - '='
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - <
   - '['
   - '"'
   - ''''
   - ']'
   - '>'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  NUM:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '-'
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - ':'
+  - '*'
+  - '4'
+  - '5'
+  - '6'
+  - +
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - ^
   - .
   - '1'
   - '2'
   - '3'
   - '='
-  - '`'
-  - '|'
-  - '&'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
-  - {t: ▽, type: trans}
   - DEL
   - '0'
   - ENTER
@@ -133,48 +177,48 @@ layers:
   - {type: held}
   - {t: ▽, type: trans}
   FUNC:
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
-  - F15
-  - F7
-  - F8
-  - F9
-  - F12
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
-  - Ctl+Sft+ESC
-  - '&sys_reset'
-  - '&sys_reset'
-  - F14
-  - F4
-  - F5
-  - F6
-  - F11
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '&bootloader'
-  - '&bootloader'
-  - F13
   - F1
   - F2
   - F3
+  - F4
+  - ''
+  - '&td_bt0'
+  - '&td_bt1'
+  - '&td_bt2'
+  - '&td_bt3'
+  - '&td_bt4'
+  - F5
+  - F6
+  - F7
+  - F8
+  - Ctl+Sft+ESC
+  - '&td_reset'
+  - '&td_reset'
+  - ''
+  - RSHFT
+  - RCTRL
+  - LALT
+  - RGUI
+  - F9
   - F10
-  - BT CLR ALL
-  - BT CLR
-  - OUT TOG
+  - F11
+  - F12
+  - ''
+  - '&td_boot'
+  - '&td_boot'
+  - ''
+  - '&td_bt_clr'
+  - '&td_out_tog'
+  - ''
+  - '&td_bt_clr_all'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   MOUSE:
   - {t: ▽, type: trans}
