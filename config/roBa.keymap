@@ -24,16 +24,6 @@
 };
 
 / {
-    // Space（SYM）と Enter（NAV）を両方押さえると FUNC
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        func_layer {
-            if-layers = <SYM NAV>;
-            then-layer = <FUNC>;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -181,6 +171,18 @@
             bindings = <&none>, <&bootloader>;
         };
 
+        // BS: タップで BS、長押しで FUNC。タップ直後にもう一度押し続けると BS のリピート
+        lt_func: lt_func {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_FUNC";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
+
         // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
@@ -221,32 +223,35 @@
 &td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
 &kp Z      &kp X         &kp C          &kp V               &kp SEMI         &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt NUM TAB          &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt NUM TAB          &lt_func FUNC BSPC &lt NAV ENTER                                                           &kp CAPS
             >;
         };
 
-        // SYM（左親指 Space 長押し）。記号は右手
-        //   右上段 = @ & | + *、右中段 = % と括弧の入れ子 { ( ) } と =、右下段 = < [ " ' ] >
-        //   左手中段 = あまり使わない記号 ` ~ ^ $ #
+        // SYM（左親指 Space 長押し）。数字・計算記号以外の記号を右手に
+        //   人差し指・中指の 2 列 = 括弧（上段 [ ]、中段 ( )、下段 { }）
+        //   人差し指の内側の列 = ' " @、薬指・小指 = & | / < > / ~ #、一番内側 = ¥ $
+        //   右親指 = : ;、Caps の位置 = `
+        //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
         SYM {
             display-name = "SYM";
             bindings = <
-&none      &none      &none      &none      &none                              &kp AT     &kp AMPS  &kp PIPE  &kp PLUS  &kp ASTRK
-&kp GRAVE  &kp TILDE  &kp CARET  &kp DLLR   &kp HASH   &none       &kp PRCNT   &kp LBRC   &kp LPAR  &kp RPAR  &kp RBRC  &kp EQUAL
-&none      &none      &none      &none      &none      &none       &kp LT      &kp LBKT   &kp DQT   &kp SQT   &kp RBKT  &kp GT
-&trans     &trans     &trans     &trans     &trans     &trans      &trans      &trans                                    &trans
+&none      &none      &none      &none      &none                              &kp SQT    &kp LBKT  &kp RBKT  &kp AMPS  &kp PIPE
+&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp BSLH    &kp DQT    &kp LPAR  &kp RPAR  &kp LT    &kp GT
+&none      &none      &none      &none      &none      &none       &kp DLLR    &kp AT     &kp LBRC  &kp RBRC  &kp TILDE &kp HASH
+&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON   &kp SEMI                                  &kp GRAVE
             >;
         };
 
-        // NUM（左親指 Tab 長押し）。右手にテンキー＋演算子、0 は右親指
-        //   左手ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）
+        // NUM（左親指 Tab 長押し）。数字と計算記号を右手に（SYM と記号の重複なし）
+        //   小指の列 = - = +、親指 = . 0（電卓の最下段と同じ並び）
+        //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
         NUM {
             display-name = "NUM";
             bindings = <
 &none      &none      &none      &none      &none                              &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp COLON   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp PLUS
-&none      &none      &none      &none      &none      &none       &kp CARET   &kp DOT    &kp N1  &kp N2  &kp N3  &kp EQUAL
-&trans     &trans     &trans     &trans     &trans     &trans      &kp DEL     &kp N0                                    &kp ENTER
+&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp COMMA   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp EQUAL
+&none      &none      &none      &none      &none      &none       &kp PRCNT   &kp CARET  &kp N1  &kp N2  &kp N3  &kp PLUS
+&trans     &trans     &trans     &trans     &trans     &trans      &kp DOT     &kp N0                                    &none
             >;
         };
 
@@ -263,7 +268,7 @@
             >;
         };
 
-        // FUNC（Space と Enter を両方押さえる）
+        // FUNC（右親指 BS 長押し）
         //   左手: F1〜F12 を読む順（上段 F1〜F4、中段 F5〜F8、下段 F9〜F12）＋タスクマネージャ
         //   右手: ホームロウ = 修飾キー（T/N/S/H = Shift/Ctrl/Alt/Win）、上段 = BT 接続先 0〜4、下段 = BT 解除 / USB・BT 切替 / 全 BT 解除
         //   左右の内側の列: 中段 = 再起動、下段 = ブートローダ（押した側の半分にだけ効く）
