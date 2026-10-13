@@ -164,14 +164,16 @@
 
         // FUNC（左親指 Tab 長押し）
         //   右手: F キー。F1〜F9 は SYM レイヤーの数字 1〜9 と同じ位置、右端の列が F10〜F12、内側の列が F13〜F15
-        //   左手: 上段 = BT 接続先 0〜4、ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）＋タスクマネージャ、下段・内側 = BT 解除・出力切替・リセット
+        //   左手: ホームロウ = 修飾キー（I/A/O と同じ指 + 小指 Win）＋タスクマネージャ
+        //         下段 = BT 接続先 0〜4、最下段 = 全 BT 解除 / BT 解除 / USB・BT 切替
+        //   左右の内側の列: 中段 = 再起動、下段 = ブートローダ（押した側の半分にだけ効く）
         FUNC {
             display-name = "FUNC";
             bindings = <
-&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
-&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &kp LC(LS(ESC)) &sys_reset       &none   &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
-&bt BT_CLR      &out OUT_TOG   &none         &none         &none         &bootloader      &none   &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
-&bt BT_CLR_ALL  &none          &none         &trans        &trans        &trans           &trans  &trans                           &trans
+&none           &none          &none         &none         &none                                           &kp F15  &kp F7  &kp F8  &kp F9  &kp F12
+&kp LGUI        &kp LALT       &kp LCTRL     &kp LSHFT     &kp LC(LS(ESC)) &sys_reset       &sys_reset     &kp F14  &kp F4  &kp F5  &kp F6  &kp F11
+&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bootloader      &bootloader    &kp F13  &kp F1  &kp F2  &kp F3  &kp F10
+&bt BT_CLR_ALL  &bt BT_CLR     &out OUT_TOG  &trans        &trans          &trans           &trans         &trans                           &trans
             >;
         };
 
