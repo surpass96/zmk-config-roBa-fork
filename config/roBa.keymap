@@ -63,19 +63,19 @@
     };
 
     behaviors {
-        mo_comma_qmark: mo_comma_qmark {
+        mo_comma_semi: mo_comma_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_COMMA_QMARK";
-            bindings = <&kp COMMA>, <&kp QMARK>;
+            label = "MO_COMMA_SEMI";
+            bindings = <&kp COMMA>, <&kp SEMI>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_dot_excl: mo_dot_excl {
+        mo_dot_colon: mo_dot_colon {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_DOT_EXCL";
-            bindings = <&kp DOT>, <&kp EXCL>;
+            label = "MO_DOT_COLON";
+            bindings = <&kp DOT>, <&kp COLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -90,6 +90,16 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+
+        // Shift の再定義（urob 方式）: , → ;  . → :  ? → !
+        mo_qmark_excl: mo_qmark_excl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MO_QMARK_EXCL";
+            bindings = <&kp QMARK>, <&kp EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
 
         mo_slash_bslh: mo_slash_bslh {
             compatible = "zmk,behavior-mod-morph";
@@ -240,9 +250,9 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
+&td_q_esc  &kp L         &kp U          &mo_comma_semi      &mo_dot_colon                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
-&kp Z      &kp X         &kp C          &kp V               &kp SEMI         &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
+&kp Z      &kp X         &kp C          &kp V               &mo_qmark_excl   &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt NUM TAB          &lt_func FUNC BSPC &lt NAV ENTER                                                           &kp CAPS
             >;
         };
