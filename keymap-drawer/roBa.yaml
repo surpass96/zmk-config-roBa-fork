@@ -4,8 +4,8 @@ layers:
   - '&td_q_esc'
   - L
   - U
-  - {t: ',', s: '!'}
-  - {t: ., s: '?'}
+  - {t: ',', s: '?'}
+  - {t: ., s: '!'}
   - F
   - W
   - {t: R, h: SCROLL}
@@ -27,8 +27,8 @@ layers:
   - X
   - C
   - V
-  - {t: ':', s: '#'}
-  - Ctl+Sft+ESC
+  - ;
+  - {t: /, s: \}
   - Gui+V
   - G
   - D
@@ -38,7 +38,7 @@ layers:
   - LCTRL
   - LEFT WIN
   - LEFT ALT
-  - '&td_lang1_lang2'
+  - {t: LSHFT, h: sticky}
   - {t: SPACE, h: SYM}
   - {t: TAB, h: FUNC}
   - BSPC
@@ -55,31 +55,31 @@ layers:
   - '8'
   - '9'
   - '-'
-  - <
-  - '>'
-  - '"'
-  - ''''
-  - '`'
+  - '='
+  - '{'
+  - (
+  - )
+  - '}'
   - '~'
-  - ;
+  - ':'
   - '*'
   - '4'
   - '5'
   - '6'
   - +
-  - '{'
+  - <
   - '['
-  - (
-  - )
+  - '"'
+  - ''''
   - ']'
-  - '}'
+  - '>'
   - ^
   - .
   - '1'
   - '2'
   - '3'
   - '='
-  - \
+  - '`'
   - '|'
   - '&'
   - {t: ▽, type: trans}
@@ -147,29 +147,29 @@ layers:
   - LALT
   - LCTRL
   - LSHFT
-  - ''
+  - Ctl+Sft+ESC
   - '&sys_reset'
-  - ''
+  - '&sys_reset'
   - F14
   - F4
   - F5
   - F6
   - F11
-  - BT CLR
-  - OUT TOG
+  - ''
+  - ''
   - ''
   - ''
   - ''
   - '&bootloader'
-  - ''
+  - '&bootloader'
   - F13
   - F1
   - F2
   - F3
   - F10
   - BT CLR ALL
-  - ''
-  - ''
+  - BT CLR
+  - OUT TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {type: held}
@@ -265,19 +265,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [19, 20]
-  k: '&m_bkt'
-- p: [7, 8]
-  k: '&m_par'
-- p: [31, 32]
-  k: '&m_brc'
-- p: [18, 19]
-  k: '&m_dqt'
-- p: [6, 7]
-  k: '&m_sqt'
-- p: [30, 31]
-  k: '&m_grave'
-- p: [18, 19, 20]
-  k: LANG1
-- p: [11, 12, 13]
+- p: [12, 13]
   k: LANG2
+- p: [18, 19]
+  k: LANG1
