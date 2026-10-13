@@ -61,31 +61,6 @@
             key-positions = <18 19 20>;
         };
 
-        // SYM レイヤー中（Space 長押し中）だけ有効。演算子を構成する 2 つの記号キーを同時押し
-        c_arrow {
-            bindings = <&m_arrow>;
-            key-positions = <9 11>;    // -  +  >  →  ->
-            layers = <SYM>;
-        };
-
-        c_neq {
-            bindings = <&m_neq>;
-            key-positions = <0 33>;    // !  +  =  →  !=
-            layers = <SYM>;
-        };
-
-        c_le {
-            bindings = <&m_le>;
-            key-positions = <10 33>;   // <  +  =  →  <=
-            layers = <SYM>;
-        };
-
-        c_ge {
-            bindings = <&m_ge>;
-            key-positions = <11 33>;   // >  +  =  →  >=
-            layers = <SYM>;
-        };
-
         c_lang2 {
             bindings = <&kp LANG2>;
             key-positions = <11 12 13>;
@@ -93,34 +68,6 @@
     };
 
     macros {
-        m_arrow: m_arrow {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp MINUS &kp GT>;
-            label = "m_arrow";
-        };
-
-        m_neq: m_neq {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp EXCL &kp EQUAL>;
-            label = "m_neq";
-        };
-
-        m_le: m_le {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LT &kp EQUAL>;
-            label = "m_le";
-        };
-
-        m_ge: m_ge {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GT &kp EQUAL>;
-            label = "m_ge";
-        };
-
         m_par: m_par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
