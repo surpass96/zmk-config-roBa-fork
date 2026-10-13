@@ -112,19 +112,19 @@
     };
 
     behaviors {
-        mo_comma_excl: mo_comma_excl {
+        mo_comma_qmark: mo_comma_qmark {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_COMMA_EXCL";
-            bindings = <&kp COMMA>, <&kp EXCL>;
+            label = "MO_COMMA_QMARK";
+            bindings = <&kp COMMA>, <&kp QMARK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_dot_qmark: mo_dot_qmark {
+        mo_dot_excl: mo_dot_excl {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_DOT_QMARK";
-            bindings = <&kp DOT>, <&kp QMARK>;
+            label = "MO_DOT_EXCL";
+            bindings = <&kp DOT>, <&kp EXCL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -193,7 +193,7 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc  &kp L         &kp U          &mo_comma_excl      &mo_dot_qmark                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
+&td_q_esc  &kp L         &kp U          &mo_comma_qmark      &mo_dot_excl                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
 &kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
 &kp Z      &kp X         &kp C          &kp V               &kp SEMI         &kp LC(LS(ESC))      &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &td_lang1_lang2     &lt SYM SPACE    &lt FUNC TAB         &kp BSPC     &lt NAV ENTER                                                           &kp CAPS
