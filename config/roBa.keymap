@@ -26,36 +26,6 @@
     combos {
         compatible = "zmk,combos";
 
-        c_bkt {
-            bindings = <&m_bkt>;
-            key-positions = <19 20>;
-        };
-
-        c_par {
-            bindings = <&m_par>;
-            key-positions = <7 8>;
-        };
-
-        c_brc {
-            bindings = <&m_brc>;
-            key-positions = <31 32>;
-        };
-
-        c_dqt {
-            bindings = <&m_dqt>;
-            key-positions = <18 19>;
-        };
-
-        c_sqt {
-            bindings = <&m_sqt>;
-            key-positions = <6 7>;
-        };
-
-        c_grave {
-            bindings = <&m_grave>;
-            key-positions = <30 31>;
-        };
-
         c_lang1 {
             bindings = <&kp LANG1>;
             key-positions = <18 19 20>;
@@ -64,50 +34,6 @@
         c_lang2 {
             bindings = <&kp LANG2>;
             key-positions = <11 12 13>;
-        };
-    };
-
-    macros {
-        m_par: m_par {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
-            label = "m_par";
-        };
-
-        m_bkt: m_bkt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
-            label = "m_bkt";
-        };
-
-        m_brc: m_brc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
-            label = "m_brc";
-        };
-
-        m_dqt: m_dqt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DQT &kp DQT &kp LEFT>;
-            label = "m_dqt";
-        };
-
-        m_sqt: m_sqt {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp SQT &kp SQT &kp LEFT>;
-            label = "m_sqt";
-        };
-
-        m_grave: m_grave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp GRAVE &kp LEFT>;
-            label = "m_grave";
         };
     };
 
