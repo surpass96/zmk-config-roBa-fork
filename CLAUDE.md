@@ -11,11 +11,15 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 - `build.yaml` — ビルド対象（roBa_R は ZMK Studio 用 snippet 付き、roBa_L、settings_reset）
 - `keymap-drawer/` — キーマップ画像（自動生成）。Draw Keymap ワークフローを手動実行して更新する
 
-## レイヤー番号
+## レイヤー構成
 
-0 O24 / 1 NUM / 2 NAV / 3 FUNCTION / 4 MOUSE / 5 SCROLL / 6 game
+0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：記号＋テンキー） / 2 NAV（左親指 Tab 長押し：カーソル・編集） / 3 FUNC（右親指 Enter 長押し：F キー・BT・システム） / 4 MOUSE（自動） / 5 SCROLL（全 &trans のモード用）
 
-トラックボールの `automouse-layer = <4>`、`scroll-layers = <5>` がこの番号に依存しているので、レイヤーを追加・並べ替えする時は合わせて更新すること。
+- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV・FUNC の左ホームロウも同じ指＝同じ修飾キー。
+- 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 4 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
+- スクロールは keymap の `&trackball { scroll-layers = <SCROLL>; }`。
+
+レイヤーを追加・並べ替えする時は、keymap 冒頭の `#define` と roBa_R.overlay のレイヤー番号を合わせて更新すること。
 
 ## 前提・方針
 
