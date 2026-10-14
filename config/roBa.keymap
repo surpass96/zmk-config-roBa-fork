@@ -11,6 +11,7 @@
 #define SYS 4
 #define MOUSE 5
 #define SCROLL 6
+#define SNIPE 7
 
 // ホームロウモッド用: 反対側の手のキー＋親指キーが押された時だけ hold（修飾キー）として扱う
 
@@ -21,7 +22,10 @@
 // MOUSE レイヤーは roBa_R.overlay の zip_temp_layer で自動 ON になる（レイヤー番号もそちらに記載）。
 // スクロールはドライバの scroll-layers で判定する。
 
-&trackball { scroll-layers = <SCROLL>; };
+&trackball {
+    scroll-layers = <SCROLL>;
+    snipe-layers = <SNIPE>;   // 精密モード: SNIPE 中はカーソルが遅くなる（roBa_R.conf の SNIPE_CPI）
+};
 
 / {
     combos {
@@ -234,14 +238,24 @@
             display-name = "MOUSE";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &kp RC(RS(T))  &mkp MB4         &mo SCROLL  &mkp MB5     &kp RC(R)
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(T)      &mkp MB1         &mkp MB3    &mkp MB2     &kp RC(F)
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(W)      &kp RC(RS(TAB))  &kp ESC     &kp RC(TAB)  &kp RC(L)
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(T)      &mkp MB1         &mkp MB3    &mkp MB2     &mo SNIPE
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(W)      &kp RC(RS(TAB))  &trans      &kp RC(TAB)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                   &trans
             >;
         };
 
         SCROLL {
             display-name = "SCROLL";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        SNIPE {
+            display-name = "SNIPE";
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
