@@ -270,10 +270,10 @@
         SYM {
             display-name = "SYM";
             bindings = <
-&none     &none     &none      &kp COMMA  &kp DOT                           &kp SQT   &kp PLUS   &kp LT    &kp GT     &kp PIPE
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &kp BSLH   &kp AT    &kp EQUAL  &kp LPAR  &kp LBRC   &kp LBKT
-&none     &none     &none      &none      &kp GRAVE  &none       &kp DLLR   &kp TILDE &kp DQT    &kp RPAR  &kp RBRC   &kp RBKT
-&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &kp HASH
+&none     &none     &none      &kp COMMA  &kp DOT                           &kp SQT   &kp PLUS   &kp LT    &kp GT    &kp PIPE
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &kp BSLH   &kp AT    &kp EQUAL  &kp LPAR  &kp LBRC  &kp LBKT
+&none     &none     &none      &none      &kp GRAVE  &none       &kp DLLR   &kp SQT   &kp DQT    &kp RPAR  &kp RBRC  &kp RBKT
+&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                 &kp HASH
             >;
         };
 
