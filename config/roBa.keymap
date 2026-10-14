@@ -255,10 +255,10 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc  &kp L         &kp U         &mo_comma_qmark &mo_dot_excl                                             &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
-&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O    &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
-&kp Z      &kp X         &kp C         &kp V           &mo_semi_plus    &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT       &lt SYM SPACE    &lt NUM TAB         &lt_func FUNC BSPC  &lt NAV ENTER                                           &kp CAPS
+&td_q_esc  &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                             &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
+&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
+&kp Z      &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT        &lt SYM SPACE    &lt NUM TAB         &lt_func FUNC BSPC  &lt NAV ENTER                                           &kp CAPS
             >;
         };
 
@@ -272,10 +272,10 @@
         SYM {
             display-name = "SYM";
             bindings = <
-&kp PRCNT  &kp LT    &kp GT    &kp COMMA  &kp DOT                             &kp CARET  &kp AT     &kp HASH  &kp DLLR  &none
-&kp EXCL   &kp STAR  &kp PLUS  &kp EQUAL  &kp MINUS  &none         &kp BSLH   &kp SQT    &kp DQT    &kp LPAR  &kp LBRC  &kp LBKT
-&none      &kp PIPE  &kp AMPS  &kp UNDER  &kp QMARK  &kp FSLH      &none      &kp GRAVE  &kp TILDE  &kp RPAR  &kp RBRC  &kp RBKT
-&trans     &trans    &trans    &trans     &trans     &trans        &kp COLON  &kp SEMI                                  &none
+&kp PRCNT  &kp LT     &kp GT     &kp COMMA  &kp DOT                           &kp CARET  &kp AT     &kp HASH  &kp DLLR  &kp AMPS
+&kp EXCL   &kp CARET  &kp FSLH   &kp EQUAL  &kp MINUS  &none       &none      &kp SQT    &kp DQT    &kp LPAR  &kp LBRC  &kp LBKT
+&kp PIPE   &kp BSLH   &kp ASTRK  &kp UNDER  &kp PLUS   &none       &none      &kp GRAVE  &kp TILDE  &kp RPAR  &kp RBRC  &kp RBKT
+&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &none
             >;
         };
 
