@@ -103,34 +103,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // SYM の括弧: タップで開き、Shift で閉じ
-        mo_paren: mo_paren {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MO_PAREN";
-            bindings = <&kp LPAR>, <&kp RPAR>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mo_brace: mo_brace {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MO_BRACE";
-            bindings = <&kp LBRC>, <&kp RBRC>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mo_bracket: mo_bracket {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MO_BRACKET";
-            bindings = <&kp LBKT>, <&kp RBKT>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         mo_slash_bslh: mo_slash_bslh {
             compatible = "zmk,behavior-mod-morph";
             label = "MO_SLASH_BSLH";
@@ -290,18 +262,20 @@
             >;
         };
 
-        // SYM（左親指 Space 長押し）
-        //   右手中段 = ¥ @ = ( { [。括弧はタップで開き、Shift（左手 O）で閉じ
-        //   右手上段 = ~ + < > |、下段 = $ ' " * # %、親指 = : ;、Caps の位置 = ^（一番使わないもの）
-        //   左手 = BASE と同じ位置の , . -、下段に `、ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
+        // SYM（左親指 Space 長押し）。よく使う記号を左右のホーム段付近に集める
+        //   左手 = 演算子・区切り: 上段 % * + , .、中段 ! < > = -、下段 & |（, . - は BASE と同じ位置）
+        //     != <= >= += *= はすべて左手の内向きロール、== は人差し指の連打
+        //   右手 = 括弧・引用符: 中段 ¥ ' " ( { [、閉じ括弧は開き括弧の真下 ) } ]、上段 ^ @ # $、下段 ~
+        //     (" (' は中指から人差し指への内向きロール
+        //   右親指 = : ;、右下の端 = `（一番使わないもの）
 
         SYM {
             display-name = "SYM";
             bindings = <
-&none     &none     &none      &kp COMMA  &kp DOT                           &kp TILDE  &kp PLUS   &kp LT     &kp GT       &kp PIPE
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &kp BSLH   &kp AT     &kp EQUAL  &mo_paren  &mo_brace    &mo_bracket
-&none     &none     &none      &none      &kp GRAVE  &none       &kp DLLR   &kp SQT    &kp DQT    &kp ASTRK  &kp HASH     &kp PRCNT
-&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                     &kp CARET
+&kp PRCNT  &kp ASTRK  &kp PLUS  &kp COMMA  &kp DOT                            &kp CARET  &kp AT     &kp HASH   &kp DLLR   &none
+&kp EXCL   &kp LT     &kp GT    &kp EQUAL  &kp MINUS  &none       &kp BSLH   &kp SQT    &kp DQT    &kp LPAR   &kp LBRC   &kp LBKT
+&none      &none      &kp AMPS  &kp PIPE   &none      &none       &none      &none      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT
+&trans     &trans     &trans    &trans     &trans     &trans      &kp COLON  &kp SEMI                                     &kp GRAVE
             >;
         };
 
