@@ -291,15 +291,15 @@
         };
 
         // NAV（右親指 Enter 長押し）
-        //   右手: 移動。T/N/S/R = ←↓→↑（逆T字）、その周りに Home/End/PgUp/PgDn/Del/BS、下段 = 画面系
-        //   左手: ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）、上段 = 音量・輝度、下段は Z X C V の位置のまま Undo/Cut/Copy/Paste
+        //   右手: 移動。T/N/S/R = ←↓→↑（逆T字）、その周りに Home/End/PgUp/PgDn/Del/BS、→ の下に Enter、下段 = 画面系
+        //   左手: ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）＋ Esc、上段 = 音量・輝度、下段は Z X C V の位置のまま Undo/Cut/Copy/Paste
 
         NAV {
             display-name = "NAV";
             bindings = <
 &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP                      &kp DEL    &kp HOME       &kp UP     &kp END    &kp PG_UP
-&kp LGUI    &kp LALT      &kp LCTRL     &kp LSHFT     &none         &trans      &trans  &kp BSPC   &kp LEFT       &kp DOWN   &kp RIGHT  &kp PG_DN
-&kp LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans      &trans  &kp PSCRN  &kp LG(LS(S))  &kp LG(D)  &none      &none
+&kp LGUI    &kp LALT      &kp LCTRL     &kp LSHFT     &kp ESC       &trans      &trans  &kp BSPC   &kp LEFT       &kp DOWN   &kp RIGHT  &kp PG_DN
+&kp LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans      &trans  &kp PSCRN  &kp LG(LS(S))  &kp LG(D)  &kp ENTER &none
 &trans      &trans        &trans        &trans        &trans        &trans      &trans  &trans                                          &trans
             >;
         };
