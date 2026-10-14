@@ -65,39 +65,39 @@
     };
 
     behaviors {
-        mo_comma_semi: mo_comma_semi {
+        mo_comma_qmark: mo_comma_qmark {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_COMMA_SEMI";
-            bindings = <&kp COMMA>, <&kp SEMI>;
+            label = "MO_COMMA_QMARK";
+            bindings = <&kp COMMA>, <&kp QMARK>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_dot_colon: mo_dot_colon {
+        mo_dot_excl: mo_dot_excl {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_DOT_COLON";
-            bindings = <&kp DOT>, <&kp COLON>;
+            label = "MO_DOT_EXCL";
+            bindings = <&kp DOT>, <&kp EXCL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mo_minus_under: mo_minus_under {
+        mo_minus_equal: mo_minus_equal {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_MINUS_UNDER";
-            bindings = <&kp MINUS>, <&kp UNDER>;
+            label = "MO_MINUS_EQUAL";
+            bindings = <&kp MINUS>, <&kp EQUAL>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        // Shift の再定義（urob 方式）: , → ;  . → :  ? → !
+        // BASE の記号の Shift: , → ?  . → !  - → =  ; → +
 
-        mo_qmark_excl: mo_qmark_excl {
+        mo_semi_plus: mo_semi_plus {
             compatible = "zmk,behavior-mod-morph";
-            label = "MO_QMARK_EXCL";
-            bindings = <&kp QMARK>, <&kp EXCL>;
+            label = "MO_SEMI_PLUS";
+            bindings = <&kp SEMI>, <&kp PLUS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -255,9 +255,9 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc  &kp L         &kp U         &mo_comma_semi  &mo_dot_colon                                            &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
-&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O    &mo_minus_under  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
-&kp Z      &kp X         &kp C         &kp V           &mo_qmark_excl   &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
+&td_q_esc  &kp L         &kp U         &mo_comma_qmark &mo_dot_excl                                             &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
+&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O    &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
+&kp Z      &kp X         &kp C         &kp V           &mo_semi_plus    &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT       &lt SYM SPACE    &lt NUM TAB         &lt_func FUNC BSPC  &lt NAV ENTER                                           &kp CAPS
             >;
         };
