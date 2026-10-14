@@ -128,48 +128,6 @@
             tapping-term-ms = <200>;
         };
 
-        // 誤打防止: BT 解除・出力切替・再起動・ブートローダは 2 回連打した時だけ発動（1 回では何もしない）
-
-        td_bt_clr: td_bt_clr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BT_CLR";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&bt BT_CLR>;
-        };
-
-        td_bt_clr_all: td_bt_clr_all {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BT_CLR_ALL";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&bt BT_CLR_ALL>;
-        };
-
-        td_out_tog: td_out_tog {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_OUT_TOG";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&out OUT_TOG>;
-        };
-
-        td_reset: td_reset {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_RESET";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&sys_reset>;
-        };
-
-        td_boot: td_boot {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BOOT";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&none>, <&bootloader>;
-        };
-
         // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
 
         hml: hml {
@@ -259,17 +217,16 @@
         };
 
         // SYS（Space と Enter の同時押し）: キーボードの設定だけ
-        //   右手上段 = BT 接続先 0〜4（1 回押し）、右手下段 = BT 解除 / USB・BT 切替 / 全 BT 解除
+        //   左手上段 = BT 接続先 0〜4、左手下段 = 全 BT 解除（小指）/ USB・BT 切替（中指）/ BT 解除（人差し指）
         //   左右の内側の列: 中段 = 再起動、下段 = ブートローダ（押した側の半分にだけ効く）
-        //   BT 切替以外はすべて 2 回連打で発動
 
         SYS {
             display-name = "SYS";
             bindings = <
-&none   &none   &none   &none   &none                                 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none   &none   &none   &none   &none   &td_reset     &td_reset   &none         &none         &none         &none         &none
-&none   &none   &none   &none   &none   &td_boot      &td_boot    &none         &td_bt_clr    &td_out_tog   &none         &td_bt_clr_all
-&trans  &trans  &trans  &trans  &trans  &trans        &trans      &trans                                                &none
+&bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                               &none   &none   &none   &none   &none
+&none           &none         &none         &none         &none         &sys_reset     &sys_reset    &none   &none   &none   &none   &none
+&bt BT_CLR_ALL  &none         &out OUT_TOG  &bt BT_CLR    &none         &bootloader    &bootloader   &none   &none   &none   &none   &none
+&trans          &trans        &trans        &trans        &trans        &trans         &trans        &trans                          &none
             >;
         };
 
