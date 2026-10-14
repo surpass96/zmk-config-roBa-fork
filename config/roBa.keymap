@@ -263,7 +263,7 @@
         };
 
         // SYM（左親指 Space 長押し）。よく使う記号を左右のホーム段付近に集める
-        //   左手 = 演算子・区切り: 上段 % * + , .、中段 ! < > = -、下段 & |（, . - は BASE と同じ位置）
+        //   左手 = 演算子・区切り: 上段 % * + , .、中段 ! < > = -、下段 | & _ ? /（, . - ? / は BASE と同じ位置、_ は = の真下）
         //     != <= >= += *= はすべて左手の内向きロール、== は人差し指の連打
         //   右手 = 括弧・引用符: 中段 ¥ ' " ( { [、閉じ括弧は開き括弧の真下 ) } ]、上段 ^ @ # $、下段 ~
         //     (" (' は中指から人差し指への内向きロール
@@ -274,7 +274,7 @@
             bindings = <
 &kp PRCNT  &kp ASTRK  &kp PLUS  &kp COMMA  &kp DOT                            &kp CARET  &kp AT     &kp HASH   &kp DLLR   &none
 &kp EXCL   &kp LT     &kp GT    &kp EQUAL  &kp MINUS  &none       &kp BSLH   &kp SQT    &kp DQT    &kp LPAR   &kp LBRC   &kp LBKT
-&none      &none      &kp AMPS  &kp PIPE   &none      &none       &none      &none      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT
+&none      &kp PIPE   &kp AMPS  &kp UNDER  &kp QMARK  &kp FSLH    &none      &none      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT
 &trans     &trans     &trans    &trans     &trans     &trans      &kp COLON  &kp SEMI                                     &kp GRAVE
             >;
         };
