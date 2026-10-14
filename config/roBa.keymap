@@ -263,16 +263,16 @@
         };
 
         // SYM（左親指 Space 長押し）
-        //   左手 = 演算子・計算: 上段 % < > , .、中段 ! ^ / = -、下段 * + _ $（, . - は BASE と同じ位置）
-        //   右手 = 括弧・引用符ほか: 上段 @ \ | & #、中段 ? " ( { [、下段 ~ ' ) } ]、親指 : ;、右下の端 `
-        //   括弧は開き括弧の真下に閉じ括弧。連打しうる記号（== ++ && || \\ など）は小指と人差し指の内側の列に置かない
+        //   覚え方: 左手 = 演算子・計算、右手 = 括弧・引用符・その他。対になる記号は上が開き・下が閉じの縦並び（[ ] ( ) { } < >）
+        //   , . - は BASE と同じ位置。親指 = : ;。右下の端は空き
+        //   連打する記号（== ++ // ** && \\ ||）は人差し指と中指。!= <= >= += *= は = への内向きロール、(" (' も内向き
         SYM {
             display-name = "SYM";
             bindings = <
-&kp PRCNT  &kp LT     &kp GT     &kp COMMA  &kp DOT                           &kp AT     &kp BSLH   &kp PIPE  &kp AMPS  &kp HASH
-&kp EXCL   &kp CARET  &kp FSLH   &kp EQUAL  &kp MINUS  &none       &none      &kp QMARK  &kp DQT    &kp LPAR  &kp LBRC  &kp LBKT
-&none      &kp ASTRK  &kp PLUS   &kp UNDER  &kp DLLR   &none       &none      &kp TILDE  &kp SQT    &kp RPAR  &kp RBRC  &kp RBKT
-&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &kp GRAVE
+&kp PRCNT  &kp UNDER  &kp FSLH   &kp COMMA  &kp DOT                           &kp TILDE  &kp BSLH   &kp PIPE  &kp AT    &kp HASH
+&kp EXCL   &kp LT     &kp PLUS   &kp EQUAL  &kp MINUS  &none       &none      &kp DQT    &kp LBKT   &kp LPAR  &kp LBRC  &kp QMARK
+&kp CARET  &kp GT     &kp ASTRK  &kp AMPS   &kp DLLR   &none       &none      &kp SQT    &kp RBKT   &kp RPAR  &kp RBRC  &kp GRAVE
+&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &none
             >;
         };
 
