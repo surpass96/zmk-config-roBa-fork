@@ -257,7 +257,7 @@
             bindings = <
 &td_q_esc  &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                             &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
 &kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
-&kp Z      &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
+&kp Z      &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LC(LS(ESC))     &kp G          &kp D         &kp M         &kp J        &kp B
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT        &lt SYM SPACE    &lt NUM TAB         &lt_func FUNC BSPC  &lt NAV ENTER                                           &kp CAPS
             >;
         };
@@ -266,13 +266,14 @@
         //   覚え方: 左手 = 演算子・計算、右手 = 括弧・引用符・その他。対になる記号は上が開き・下が閉じの縦並び（[ ] ( ) { } < >）
         //   , . - は BASE と同じ位置。親指 = : ;。右下の端は空き
         //   連打する記号（== ++ // ** && \\ ||）は人差し指と中指。!= <= >= += *= は = への内向きロール、(" (' も内向き
+
         SYM {
             display-name = "SYM";
             bindings = <
-&kp PRCNT  &kp UNDER  &kp FSLH   &kp COMMA  &kp DOT                           &kp TILDE  &kp BSLH   &kp PIPE  &kp AT    &kp HASH
-&kp EXCL   &kp LT     &kp PLUS   &kp EQUAL  &kp MINUS  &none       &none      &kp DQT    &kp LBKT   &kp LPAR  &kp LBRC  &kp QMARK
-&kp CARET  &kp GT     &kp ASTRK  &kp AMPS   &kp DLLR   &none       &none      &kp SQT    &kp RBKT   &kp RPAR  &kp RBRC  &kp GRAVE
-&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &none
+&kp PRCNT  &kp UNDER  &kp FSLH   &kp COMMA  &kp DOT                           &kp TILDE  &kp BSLH  &kp PIPE  &kp AT    &kp HASH
+&kp EXCL   &kp LT     &kp PLUS   &kp EQUAL  &kp MINUS  &none       &none      &kp DQT    &kp LBKT  &kp LPAR  &kp LBRC  &kp QMARK
+&kp CARET  &kp GT     &kp ASTRK  &kp AMPS   &kp DLLR   &none       &none      &kp SQT    &kp RBKT  &kp RPAR  &kp RBRC  &kp GRAVE
+&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                 &none
             >;
         };
 
