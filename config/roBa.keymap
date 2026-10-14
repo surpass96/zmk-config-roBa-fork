@@ -262,19 +262,18 @@
             >;
         };
 
-        // SYM（左親指 Space 長押し）。数字・計算記号以外の記号を右手に
-        //   人差し指・中指の 2 列 = 括弧（上段 [ ]、中段 ( )、下段 { }）
-        //   人差し指の内側の列 = ' " @、薬指・小指 = & | / < > / ~ #、一番内側 = ¥ $
-        //   右親指 = : ;、Caps の位置 = `
-        //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
+        // SYM（左親指 Space 長押し）
+        //   右手中段 = ¥ @ = ( { [、その真下の下段に閉じ括弧 ) } ]
+        //   右手上段 = ' + < > |、下段の内側 = $ ~ "、親指 = : ;、Caps の位置 = #
+        //   左手 = BASE と同じ位置の , . -、` は左手下段、ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
 
         SYM {
             display-name = "SYM";
             bindings = <
 &none     &none     &none      &kp COMMA  &kp DOT                           &kp SQT   &kp PLUS   &kp LT    &kp GT     &kp PIPE
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &kp BSLH   &kp AT    &kp EQUAL  &kp LPAR  &kp LBRC   &kp LBKT
-&none     &none     &none      &none      &none      &none       &kp DLLR   &kp AT    &kp DQT    &kp RBRC  &kp TILDE  &kp HASH
-&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &kp GRAVE
+&none     &none     &none      &none      &kp GRAVE  &none       &kp DLLR   &kp TILDE &kp DQT    &kp RPAR  &kp RBRC   &kp RBKT
+&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &kp HASH
             >;
         };
 
