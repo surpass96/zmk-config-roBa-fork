@@ -279,15 +279,14 @@
 
         // NUM（左親指 Tab 長押し）
         //   右手 = 数字（上段 7 8 9、ホーム段 1 2 3、下段 4 5 6、親指 . 0）と数字に付く記号（内側の列 ~ : ¥、小指の中段 =）
-        //   左手 = 計算記号。上段・下段は SYM の左手とほぼ同じ位置（% / , . ^ * $）、括弧は薬指に縦並び ( )、+ は人差し指の下段
-        //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
+        //   左手 = SYM の左手とまったく同じ（演算子・計算記号）
         NUM {
             display-name = "NUM";
             bindings = <
-&kp PRCNT  &kp LPAR   &kp FSLH   &kp COMMA  &kp DOT                           &kp TILDE  &kp N7  &kp N8  &kp N9  &none
-&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &none      &kp COLON  &kp N1  &kp N2  &kp N3  &kp EQUAL
-&kp CARET  &kp RPAR   &kp ASTRK  &kp PLUS   &kp DLLR   &none       &none      &kp BSLH   &kp N4  &kp N5  &kp N6  &none
-&trans     &trans     &trans     &trans     &trans     &trans      &kp DOT    &kp N0                              &none
+&kp PRCNT   &kp UNDER   &kp FSLH    &kp COMMA   &kp DOT     &kp TILDE   &kp N7      &kp N8      &kp N9      &none
+&kp EXCL    &kp LT      &kp PLUS    &kp EQUAL   &kp MINUS   &none       &none       &kp COLON   &kp N1      &kp N2      &kp N3      &kp EQUAL
+&kp CARET   &kp GT      &kp ASTRK   &kp AMPS    &kp DLLR    &none       &none       &kp BSLH    &kp N4      &kp N5      &kp N6      &none
+&trans      &trans      &trans      &trans      &trans      &trans      &kp DOT     &kp N0      &none
             >;
         };
 
