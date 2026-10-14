@@ -13,15 +13,15 @@
 #define SCROLL 6
 
 // ホームロウモッド用: 反対側の手のキー＋親指キーが押された時だけ hold（修飾キー）として扱う
+
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36
 #define KEYS_R 5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 42
 #define THUMBS 37 38 39 40 41
 
 // MOUSE レイヤーは roBa_R.overlay の zip_temp_layer で自動 ON になる（レイヤー番号もそちらに記載）。
 // スクロールはドライバの scroll-layers で判定する。
-&trackball {
-    scroll-layers = <SCROLL>;
-};
+
+&trackball { scroll-layers = <SCROLL>; };
 
 / {
     combos {
@@ -29,6 +29,7 @@
 
         // IME 切替は人差し指＋中指の同時押し（左 = 英数 / 右 = かな）
         // "ao" "nt" などを速く打つと重なって誤爆しうるので、判定時間は短めにしている
+
         c_eisu {
             bindings = <&kp LANG2>;
             key-positions = <12 13>;   // 左: A + O
@@ -43,6 +44,7 @@
 
         // 左手下段の隣り合った 2 キーで Undo / Copy / Paste（右手がボールの上にある時用）
         // zx / xc / cv はローマ字でも英語でもほぼ連続しないので誤爆しにくい
+
         c_undo {
             bindings = <&kp LC(Z)>;
             key-positions = <22 23>;   // Z + X
@@ -90,8 +92,8 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-
         // Shift の再定義（urob 方式）: , → ;  . → :  ? → !
+
         mo_qmark_excl: mo_qmark_excl {
             compatible = "zmk,behavior-mod-morph";
             label = "MO_QMARK_EXCL";
@@ -119,8 +121,8 @@
             tapping-term-ms = <200>;
         };
 
-
         // 誤打防止: BT・再起動・ブートローダは 2 回連打した時だけ発動（1 回では何もしない）
+
         td_bt0: td_bt0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_BT0";
@@ -202,6 +204,7 @@
         };
 
         // BS: タップで BS、長押しで FUNC。タップ直後にもう一度押し続けると BS のリピート
+
         lt_func: lt_func {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_FUNC";
@@ -214,6 +217,7 @@
         };
 
         // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
+
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
             label = "HML";
@@ -229,6 +233,7 @@
         };
 
         // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -250,10 +255,10 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc  &kp L         &kp U          &mo_comma_semi      &mo_dot_colon                                      &kp F        &kp W               &lt SCROLL R        &kp Y              &kp P
-&kp E      &hml LALT I   &hml LCTRL A   &hml LSHFT O        &mo_minus_under  &kp ESC              &kp LG(TAB)  &kp K        &hmr RSHFT T        &hmr RCTRL N        &hmr LALT S        &kp H
-&kp Z      &kp X         &kp C          &kp V               &mo_qmark_excl   &mo_slash_bslh       &kp LG(V)    &kp G        &kp D               &kp M               &kp J              &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT   &sk LSHFT           &lt SYM SPACE    &lt NUM TAB          &lt_func FUNC BSPC &lt NAV ENTER                                                           &kp CAPS
+&td_q_esc  &kp L         &kp U         &mo_comma_semi  &mo_dot_colon                                            &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
+&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O    &mo_minus_under  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
+&kp Z      &kp X         &kp C         &kp V           &mo_qmark_excl   &mo_slash_bslh      &kp LG(V)           &kp G          &kp D         &kp M         &kp J        &kp B
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT       &lt SYM SPACE    &lt NUM TAB         &lt_func FUNC BSPC  &lt NAV ENTER                                           &kp CAPS
             >;
         };
 
@@ -262,39 +267,42 @@
         //   人差し指の内側の列 = ' " @、薬指・小指 = & | / < > / ~ #、一番内側 = ¥ $
         //   右親指 = : ;、Caps の位置 = `
         //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
+
         SYM {
             display-name = "SYM";
             bindings = <
-&none      &none      &none      &none      &none                              &kp SQT    &kp LBKT  &kp RBKT  &kp AMPS  &kp PIPE
-&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp BSLH    &kp DQT    &kp LPAR  &kp RPAR  &kp LT    &kp GT
-&none      &none      &none      &none      &none      &none       &kp DLLR    &kp AT     &kp LBRC  &kp RBRC  &kp TILDE &kp HASH
-&trans     &trans     &trans     &trans     &trans     &trans      &kp COLON   &kp SEMI                                  &kp GRAVE
+&none     &none     &none      &kp COMMA  &kp DOT                           &kp SQT   &kp PLUS   &kp LT    &kp GT     &kp PIPE
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp MINUS  &none       &kp BSLH   &kp DQT   &kp EQUAL  &kp LPAR  &kp LBRC   &kp LBKT
+&none     &none     &none      &none      &none      &none       &kp DLLR   &kp AT    &kp DQT    &kp RBRC  &kp TILDE  &kp HASH
+&trans    &trans    &trans     &trans     &trans     &trans      &kp COLON  &kp SEMI                                  &kp GRAVE
             >;
         };
 
         // NUM（左親指 Tab 長押し）。数字と計算記号を右手に（SYM と記号の重複なし）
         //   小指の列 = - = +、親指 = . 0（電卓の最下段と同じ並び）
         //   左手ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）
+
         NUM {
             display-name = "NUM";
             bindings = <
-&none      &none      &none      &none      &none                              &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
-&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none      &none       &kp COMMA   &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp EQUAL
-&none      &none      &none      &none      &none      &none       &kp PRCNT   &kp CARET  &kp N1  &kp N2  &kp N3  &kp PLUS
-&trans     &trans     &trans     &trans     &trans     &trans      &kp DOT     &kp N0                                    &none
+&none     &none     &none      &none      &none                          &kp FSLH   &kp N7  &kp N8  &kp N9  &kp MINUS
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &none       &kp COMMA  &kp ASTRK  &kp N4  &kp N5  &kp N6  &kp EQUAL
+&none     &none     &none      &none      &none   &none       &kp PRCNT  &kp CARET  &kp N1  &kp N2  &kp N3  &kp PLUS
+&trans    &trans    &trans     &trans     &trans  &trans      &kp DOT    &kp N0                             &none
             >;
         };
 
         // NAV（右親指 Enter 長押し）
         //   右手: 移動。T/N/S/R = ←↓→↑（逆T字）、その周りに Home/End/PgUp/PgDn/Del/BS、下段 = 画面系
         //   左手: ホームロウ = 修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）、上段 = 音量・輝度、下段は Z X C V の位置のまま Undo/Cut/Copy/Paste
+
         NAV {
             display-name = "NAV";
             bindings = <
-&kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP                     &kp DEL     &kp HOME       &kp UP     &kp END    &kp PG_UP
-&kp LGUI    &kp LALT      &kp LCTRL     &kp LSHFT     &none         &trans      &trans  &kp BSPC    &kp LEFT       &kp DOWN   &kp RIGHT  &kp PG_DN
-&kp LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans      &trans  &kp PSCRN   &kp LG(LS(S))  &kp LG(D)  &none      &none
-&trans      &trans        &trans        &trans        &trans        &trans      &trans  &trans                                           &trans
+&kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP                      &kp DEL    &kp HOME       &kp UP     &kp END    &kp PG_UP
+&kp LGUI    &kp LALT      &kp LCTRL     &kp LSHFT     &none         &trans      &trans  &kp BSPC   &kp LEFT       &kp DOWN   &kp RIGHT  &kp PG_DN
+&kp LC(Z)   &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LC(Y)     &trans      &trans  &kp PSCRN  &kp LG(LS(S))  &kp LG(D)  &none      &none
+&trans      &trans        &trans        &trans        &trans        &trans      &trans  &trans                                          &trans
             >;
         };
 
@@ -303,13 +311,14 @@
         //   右手: ホームロウ = 修飾キー（T/N/S/H = Shift/Ctrl/Alt/Win）、上段 = BT 接続先 0〜4、下段 = BT 解除 / USB・BT 切替 / 全 BT 解除
         //   左右の内側の列: 中段 = 再起動、下段 = ブートローダ（押した側の半分にだけ効く）
         //   BT・再起動・ブートローダはすべて 2 回連打で発動
+
         FUNC {
             display-name = "FUNC";
             bindings = <
-&kp F1     &kp F2     &kp F3     &kp F4     &none                                  &td_bt0    &td_bt1    &td_bt2     &td_bt3    &td_bt4
-&kp F5     &kp F6     &kp F7     &kp F8     &kp LC(LS(ESC))  &td_reset   &td_reset  &none      &kp RSHFT  &kp RCTRL   &kp LALT   &kp RGUI
-&kp F9     &kp F10    &kp F11    &kp F12    &none            &td_boot    &td_boot   &none      &td_bt_clr &td_out_tog &none      &td_bt_clr_all
-&trans     &trans     &trans     &trans     &trans           &trans      &trans     &trans                                        &trans
+&kp F1  &kp F2   &kp F3   &kp F4   &none                                      &td_bt0  &td_bt1     &td_bt2      &td_bt3   &td_bt4
+&kp F5  &kp F6   &kp F7   &kp F8   &kp LC(LS(ESC))  &td_reset      &td_reset  &none    &kp RSHFT   &kp RCTRL    &kp LALT  &kp RGUI
+&kp F9  &kp F10  &kp F11  &kp F12  &none            &td_boot       &td_boot   &none    &td_bt_clr  &td_out_tog  &none     &td_bt_clr_all
+&trans  &trans   &trans   &trans   &trans           &trans         &trans     &trans                                      &trans
             >;
         };
 
