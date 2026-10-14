@@ -13,11 +13,11 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ## レイヤー構成
 
-0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：左手に演算子・計算、右手に括弧・引用符・その他。対の記号は上が開き・下が閉じの縦並び） / 2 NUM（左親指 Tab 長押し：右手に数字（ホーム段 1 2 3）と数字に付く記号、左手に計算記号と括弧） / 3 NAV（右親指 Enter 長押し：右手に矢印、左手に修飾キー・編集・音量） / 4 FUNC（右親指 BS 長押し：左手に F キー、右手に BT・修飾キー） / 5 MOUSE（自動） / 6 SCROLL（全 &trans のモード用）
+0 BASE（大西配列＋ホームロウモッド） / 1 SYM（左親指 Space 長押し：左手に演算子・計算、右手に括弧・引用符・その他。対の記号は上が開き・下が閉じの縦並び） / 2 NUM（左親指 Tab 長押し：右手に数字（ホーム段 1 2 3）と数字に付く記号・括弧、左手は SYM の左手と同じ） / 3 NAV（右親指 Enter 長押し：右手に矢印・音量・輝度、左手に F キーと修飾キー） / 4 SYS（Space＋Enter の同時押しコンボ：BT・出力切替・再起動・ブートローダ） / 5 MOUSE（自動） / 6 SCROLL（全 &trans のモード用）
 
-利き手が右なので、数字・記号・矢印は右手に置く方針。BT・再起動・ブートローダは誤打防止のため 2 回連打（tap-dance）でのみ発動。
+利き手が右なので、数字・記号・矢印は右手に置く方針。BT 解除・出力切替・再起動・ブートローダは誤打防止のため 2 回連打（tap-dance）でのみ発動（BT 接続先の切替は 1 回押し）。
 
-- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NUM・NAV の左ホームロウ、FUNC の右ホームロウも同じ指＝同じ修飾キー。
+- ホームロウモッドは I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。NAV の左ホームロウも同じ指＝同じ修飾キー。
 - 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`boards/shields/roBa/roBa_R.overlay`）。`input-processors = <&zip_temp_layer 5 700>` のレイヤー番号と `excluded-positions` は keymap の MOUSE レイヤーと合わせること。
 - IME 切替はホーム段の人差し指＋中指の同時押しコンボ（左 A+O = 英数 LANG2 / 右 T+N = かな LANG1）。左親指外側はワンショット Shift。左手下段の同時押しコンボ Z+X / X+C / C+V = Undo / Copy / Paste。
 - スクロールは keymap の `&trackball { scroll-layers = <SCROLL>; }`。
