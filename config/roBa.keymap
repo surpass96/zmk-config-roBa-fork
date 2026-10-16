@@ -50,10 +50,11 @@
         // zx / xc / cv はローマ字でも英語でもほぼ連続しないので誤爆しにくい
 
         // 両親指（Space + Enter）の同時押しで SYS（キーボード設定）。押している間だけ有効
+        // Space は左手（BLE 経由で届く）、Enter は右手なので、左右の遅延を見込んで判定時間を長めにしている
         c_sys {
             bindings = <&mo SYS>;
             key-positions = <38 41>;
-            timeout-ms = <50>;
+            timeout-ms = <150>;
         };
 
         c_undo {
