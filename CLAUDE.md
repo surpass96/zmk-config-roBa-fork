@@ -12,7 +12,7 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
   - `roBa_R.conf` — トラックボールの CPI・精密モードの CPI など
 - `build.yaml` — ビルド対象（roBa_R は ZMK Studio 用 snippet 付き、roBa_L、settings_reset）
 - `keymap-drawer/` — キーマップ画像（自動生成）。Draw Keymap ワークフローを手動実行して更新する
-- `wallpaper/` — キーマップの壁紙（PC 用 2560×1600（WQHD と 1920×1200 の両方で使える）・3840×2160、iPhone 12 用 1170×2532、iPad 11 インチ横向き用 2360×1640）。HTML を Chromium で撮影した PNG。キーマップを変えたら手で作り直す
+- `wallpaper/` — キーマップの壁紙（PC 用 2560×1600（WQHD と 1920×1200 の両方で使える）・3840×2160、iPhone 12 用 1170×2532、iPad 11 インチ横向き用 2360×1640（ロック画面用・ホーム画面用）。HTML を Chromium で撮影した PNG。キーマップを変えたら手で作り直す
 
 ## レイヤー構成
 
