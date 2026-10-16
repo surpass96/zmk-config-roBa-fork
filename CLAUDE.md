@@ -49,7 +49,7 @@ I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。反対の�
 
 ### マウス
 
-- 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`roBa_R.overlay`、ボールを動かして 700ms 有効）。`excluded-positions` 以外のキーを押すと即解除され、BASE の文字が入力される。`excluded-positions` は MOUSE レイヤーのキー配置と合わせること。
+- 自動マウスはドライバの automouse ではなく ZMK 標準の `zip_temp_layer`（`roBa_R.overlay`、ボールを動かして 700ms 有効）。`excluded-positions` 以外のキーを押すと即解除され、BASE の文字が入力される。左・中・右クリックは離して 250ms 後に解除される（keymap の `click_off_*` マクロ＋`mouse_off`。クリック直後に打った文字がマウス操作にならないように）。`excluded-positions` は MOUSE レイヤーのキー配置と合わせること。
 - スクロールと精密モードは keymap の `&trackball { scroll-layers = <SCROLL>; snipe-layers = <SNIPE>; }`。精密モードの速さは roBa_R.conf の `CONFIG_PMW3610_SNIPE_CPI`（通常 400、精密 200）。
 
 ## 記号配置の方針（SYM / NUM を編集する時）
