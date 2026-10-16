@@ -39,7 +39,7 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ### コンボ
 
-- IME 切替：左 A+O = 英数（LANG2）、右 T+N = かな（LANG1）
+- IME 切替：左 A+O または I+A = 英数（LANG2）、右 T+N または N+S = かな（LANG1）。判定 30ms
 - コピペ：左手下段 Z+X / X+C / C+V = Undo / Copy / Paste（全レイヤーで有効）
 - SYS：Space+Enter
 

@@ -31,7 +31,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // IME 切替は人差し指＋中指の同時押し（左 = 英数 / 右 = かな）
+        // IME 切替は人差し指＋中指、または中指＋薬指の同時押し（左 = 英数 / 右 = かな）
         // "ao" "nt" などを速く打つと重なって誤爆しうるので、判定時間は短めにしている
 
         c_eisu {
@@ -43,6 +43,18 @@
         c_kana {
             bindings = <&kp LANG1>;
             key-positions = <18 19>;   // 右: T + N
+            timeout-ms = <30>;
+        };
+
+        c_eisu2 {
+            bindings = <&kp LANG2>;
+            key-positions = <11 12>;   // 左: I + A（中指＋薬指）
+            timeout-ms = <30>;
+        };
+
+        c_kana2 {
+            bindings = <&kp LANG1>;
+            key-positions = <19 20>;   // 右: N + S（中指＋薬指）
             timeout-ms = <30>;
         };
 
