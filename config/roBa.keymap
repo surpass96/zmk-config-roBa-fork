@@ -142,6 +142,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        // 左親指外側: 1 回押し = かな（IME オン） / 2 回押し = 英数（IME オフ）
+        td_ime: td_ime {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_IME";
+            #binding-cells = <0>;
+            bindings = <&kp LANG1>, <&kp LANG2>;
+        };
+
         td_q_esc: td_q_esc {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_Q_ESC";
@@ -151,7 +159,7 @@
             tapping-term-ms = <200>;
         };
 
-        // ホームロウモッド（左手）。I=Alt / A=Ctrl / O=Shift
+        // ホームロウモッド（左手）。E=Win / I=Alt / A=Ctrl / O=Shift（NAV の左ホーム段と同じ）
 
         hml: hml {
             compatible = "zmk,behavior-hold-tap";
@@ -167,7 +175,7 @@
             hold-trigger-on-release;
         };
 
-        // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt
+        // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt / H=Win
 
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
@@ -235,9 +243,9 @@
             display-name = "BASE";
             bindings = <
 &td_q_esc  &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                             &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
-&kp E      &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &kp H
+&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC             &kp LG(TAB)         &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &hmr RGUI H
 &kp Z      &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LC(LS(ESC))     &kp G          &kp D         &kp M         &kp J        &kp B
-&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &sk LSHFT        &lt SYM SPACE    &lt NUM TAB         &kp BSPC            &lt NAV ENTER                                           &kp CAPS
+&kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt SYM SPACE    &lt NUM TAB         &kp BSPC            &lt NAV ENTER                                           &kp CAPS
             >;
         };
 

@@ -31,7 +31,7 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ### 親指キー（BASE）
 
-左：外側 = ワンショット Shift（長押しで普通の Shift）/ Space（長押し SYM）/ Tab（長押し NUM）、右：BS / Enter（長押し NAV）。右下の端は Caps（他のレイヤーでは使わない）。
+左：外側 = 1 回押しでかな（IME オン）・2 回押しで英数（IME オフ）（tap-dance `td_ime`）/ Space（長押し SYM）/ Tab（長押し NUM）、右：BS / Enter（長押し NAV）。右下の端は Caps（他のレイヤーでは使わない）。
 
 ### BASE の記号（Shift の組み合わせは US/JIS の配列ではなく意味で決めている）
 
@@ -39,13 +39,13 @@ roBa（トラックボール付き分割キーボード）用の ZMK ファー�
 
 ### コンボ
 
-- IME 切替：左 A+O または I+A = 英数（LANG2）、右 T+N または N+S = かな（LANG1）。判定 30ms
+- IME 切替：左 A+O または I+A = 英数（LANG2）、右 T+N または N+S = かな（LANG1）。判定 30ms。左親指外側の 1 回押し / 2 回押しでもかな / 英数
 - コピペ：左手下段 Z+X / X+C / C+V = Undo / Copy / Paste（全レイヤーで有効）
 - SYS：Space+Enter
 
 ### ホームロウモッド
 
-I/A/O = Alt/Ctrl/Shift、T/N/S = Shift/Ctrl/Alt（`hml` / `hmr`）。反対の手のキーか親指キーと組み合わせた時だけ修飾キーになる（`hold-trigger-key-positions`）。NAV の左ホームロウも同じ指＝同じ修飾キー（E/I/A/O = Win/Alt/Ctrl/Shift）。
+E/I/A/O = Win/Alt/Ctrl/Shift、T/N/S/H = Shift/Ctrl/Alt/Win（`hml` / `hmr`。外側から Win/Alt/Ctrl/Shift）。反対の手のキーか親指キーと組み合わせた時だけ修飾キーになる（`hold-trigger-key-positions`）。NAV の左ホームロウも同じ並び（E/I/A/O = Win/Alt/Ctrl/Shift）。
 
 ### マウス
 
