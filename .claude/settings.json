@@ -1,0 +1,9 @@
+{
+  "model": "sonnet",
+  "effortLevel": "low",
+  "maxEffortLevel": "medium",
+  "fastMode": false,
+  "workflowSizeGuideline": "small",
+  "promptSuggestionEnabled": false,
+  "autoDreamEnabled": false
+}
