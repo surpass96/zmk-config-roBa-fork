@@ -148,6 +148,15 @@
 
         // 左親指外側: 1 回押し = かな（IME オン） / 2 回押し = 英数（IME オフ）
 
+        // NAV: 1 回押し = 再生/停止 / 2 回押し = 次の曲 / 3 回押し = 前の曲
+        td_media: td_media {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_MEDIA";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp C_PP>, <&kp C_NEXT>, <&kp C_PREV>;
+        };
+
         td_ime: td_ime {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_IME";
@@ -305,7 +314,7 @@
             bindings = <
 &kp F1    &kp F2    &kp F3     &kp F4     &kp F5                        &kp LC(LS(T))  &kp ESC          &kp UP    &kp CAPS     &kp C_BRI_UP
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp F11      &trans  &kp LC(T)      &kp LEFT         &kp DOWN  &kp RIGHT    &kp C_BRI_DN
-&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &trans  &kp LC(W)      &kp LC(LS(TAB))  &kp C_PP  &kp LC(TAB)  &kp LG(LS(S))
+&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &trans  &kp LC(W)      &kp LC(LS(TAB))  &td_media  &kp LC(TAB)  &kp LG(LS(S))
 &trans    &trans    &trans     &trans     &trans   &trans       &trans  &trans                                                 &trans
             >;
         };
