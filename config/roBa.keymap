@@ -190,6 +190,21 @@
         };
 
         // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt / H=Win
+        hmr: hmr {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt / H=Win
     };
 
     // 自動マウス: クリックを離して 250ms 後に MOUSE レイヤーを解除する
@@ -256,7 +271,7 @@
             display-name = "BASE";
             bindings = <
 &td_q_esc    &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                      &kp F          &kp W          &lt SCROLL R  &kp Y             &kp P
-&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp LG(LS(S))       &kp LG(TAB)  &kp K          &hml RSHIFT T  &hml RCTRL N  &hml RIGHT_ALT S  &hml RIGHT_WIN H
+&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp LG(LS(S))       &kp LG(TAB)  &kp K          &hmr RSHIFT T  &hmr RCTRL N  &hmr RIGHT_ALT S  &hmr RIGHT_WIN H
 &kp Z        &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LG(D)    &kp G          &kp D          &kp M         &kp J             &kp B
 &kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt SYM SPACE    &lt NUM TAB         &kp BSPC     &lt NAV ENTER                                                 &none
             >;
