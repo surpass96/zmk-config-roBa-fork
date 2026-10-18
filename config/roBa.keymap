@@ -190,6 +190,7 @@
         };
 
         // ホームロウモッド（右手）。T=Shift / N=Ctrl / S=Alt / H=Win
+
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";
             label = "HMR";
@@ -286,8 +287,8 @@
             display-name = "SYM";
             bindings = <
 &kp CARET  &kp LT     &kp EQUAL  &kp GT    &kp DOT                           &kp EXCL   &kp DQT   &kp SQT   &kp GRAVE  &kp QMARK
-&kp BSLH   &kp FSLH   &kp STAR   &kp PLUS  &kp MINUS  &none       &none      &kp TILDE  &kp LBKT  &kp LPAR  &kp RBRC   &kp HASH
-&kp DLLR   &kp PRCNT  &kp PIPE   &kp AMPS  &kp UNDER  &none       &none      &kp AT     &kp RBKT  &kp RPAR  &kp LBRC   &none
+&kp BSLH   &kp FSLH   &kp STAR   &kp PLUS  &kp MINUS  &none       &none      &kp TILDE  &kp LBKT  &kp LPAR  &kp LBRC   &kp HASH
+&kp DLLR   &kp PRCNT  &kp PIPE   &kp AMPS  &kp UNDER  &none       &none      &kp AT     &kp RBKT  &kp RPAR  &kp RBRC   &none
 &trans     &trans     &trans     &trans    &trans     &trans      &kp COLON  &kp SEMI                                  &none
             >;
         };
