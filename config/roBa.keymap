@@ -256,7 +256,7 @@
             display-name = "BASE";
             bindings = <
 &td_q_esc    &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                      &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
-&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp LG(LS(S))       &kp LG(TAB)  &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &hmr RGUI H
+&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp LG(LS(S))       &kp LG(TAB)  &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &hmr LGUI H
 &kp Z        &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LG(D)    &kp G          &kp D         &kp M         &kp J        &kp B
 &kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt SYM SPACE    &lt NUM TAB         &kp BSPC     &lt NAV ENTER                                           &none
             >;
@@ -300,7 +300,7 @@
             bindings = <
 &kp F1    &kp F2    &kp F3     &kp F4     &kp F5                                      &kp LC(LS(T))  &kp ESC          &kp UP    &kp CAPS     &kp C_VOL_UP
 &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp F11      &kp C_BRIGHTNESS_INC  &kp LC(T)      &kp LEFT         &kp DOWN  &kp RIGHT    &kp C_VOL_DN
-&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &kp C_BRIGHTNESS_DEC  &kp LC(W)      &kp LC(LS(TAB))  &kp C_PP  &kp LC(TAB)  &kp C_MUTE
+&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &kp C_BRIGHTNESS_DEC  &kp LC(W)      &kp LC(LS(TAB))  &td_media  &kp LC(TAB)  &kp C_MUTE
 &trans    &trans    &trans     &trans     &trans   &trans       &trans                &trans                                                 &trans
             >;
         };
