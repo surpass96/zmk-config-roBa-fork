@@ -263,7 +263,7 @@
 &td_q_esc    &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                      &kp F          &kp W         &lt SCROLL R  &kp Y        &kp P
 &hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC             &kp LG(TAB)  &kp K          &hmr RSHFT T  &hmr RCTRL N  &hmr LALT S  &hmr RGUI H
 &kp Z        &kp X         &kp C         &kp V            &mo_semi_plus    &mo_slash_bslh      &kp LG(D)    &kp G          &kp D         &kp M         &kp J        &kp B
-&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt SYM SPACE    &lt NUM TAB         &kp BSPC     &lt NAV ENTER                                           &kp CAPS
+&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt SYM SPACE    &lt NUM TAB         &kp BSPC     &lt NAV ENTER                                           &none
             >;
         };
 
@@ -275,9 +275,9 @@
         SYM {
             display-name = "SYM";
             bindings = <
-&kp PRCNT  &kp LT    &kp EQUAL  &kp GT     &kp DOT                          &kp TILDE  &kp DQT   &kp SQT   &kp GRAVE  &kp HASH
-&kp EXCL   &kp FSLH  &kp STAR   &kp MINUS  &kp PLUS  &none       &none      &kp HASH   &kp LBKT  &kp LPAR  &kp RBRC   &kp FSLH
-&kp CARET  &kp RBRC  &kp RPAR   &kp RBKT   &kp DLLR  &none       &none      &kp AT     &kp RBKT  &kp RPAR  &kp RBRC   &kp PIPE
+&kp CARET  &kp LT    &kp EQUAL  &kp GT     &kp DOT                          &kp TILDE  &kp DQT   &kp SQT   &kp GRAVE  &kp HASH
+&kp PRCNT  &kp FSLH  &kp STAR   &kp MINUS  &kp PLUS  &none       &none      &kp HASH   &kp LBKT  &kp LPAR  &kp RBRC   &kp FSLH
+&kp AT     &kp BSLH  &kp HASH   &kp DLLR   &kp AMPS  &none       &none      &kp AT     &kp RBKT  &kp RPAR  &kp RBRC   &kp PIPE
 &trans     &trans    &trans     &trans     &trans    &trans      &kp COLON  &kp SEMI                                  &none
             >;
         };
