@@ -289,10 +289,10 @@
         NUM {
             display-name = "NUM";
             bindings = <
-&kp CARET  &kp LT     &kp EQUAL  &kp GT    &kp DOT                           &kp TILDE  &kp N7  &kp N8  &kp N9  &kp LPAR
-&kp BSLH   &kp FSLH   &kp STAR   &kp PLUS  &kp MINUS  &none       &none     &kp N0     &kp N1  &kp N2  &kp N3  &kp DOT
-&kp DLLR   &kp PRCNT  &kp PIPE   &kp AMPS  &kp UNDER  &none       &none     &kp BSLH   &kp N4  &kp N5  &kp N6  &kp RPAR
-&trans     &trans     &trans     &trans     &trans     &trans      &kp DLLR  &kp COLON                          &none
+&kp CARET  &kp LT     &kp EQUAL  &kp GT    &kp DOT                         &kp HOME  &kp N7  &kp N8  &kp N9  &kp LPAR
+&kp BSLH   &kp FSLH   &kp STAR   &kp PLUS  &kp MINUS  &none       &none    &kp N0    &kp N1  &kp N2  &kp N3  &kp ENTER
+&kp DLLR   &kp PRCNT  &kp PIPE   &kp AMPS  &kp UNDER  &none       &none    &kp END   &kp N4  &kp N5  &kp N6  &kp RPAR
+&trans     &trans     &trans     &trans    &trans     &trans      &kp DOT  &kp N0                            &none
             >;
         };
 
