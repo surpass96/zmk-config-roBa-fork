@@ -271,10 +271,10 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&td_q_esc    &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                     &kp F        &kp W          &lt SCROLL R  &kp Y             &kp P
-&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC            &kp LG(TAB)  &kp K        &hmr RSHIFT T  &hmr RCTRL N  &hmr RIGHT_ALT S  &hmr RIGHT_WIN H
-&kp Z        &kp X         &kp C         &kp V            &mo_semi_plus    &kp LG(LS(S))      &kp LG(D)    &kp G        &kp D          &kp M         &kp J             &kp B
-&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt 2 SPACE      &lt 3 TAB          &kp BSPC     &lt 1 ENTER                                                 &kp DEL
+&td_q_esc    &kp L         &kp U         &mo_comma_qmark  &mo_dot_excl                                   &kp F        &kp W          &lt SCROLL R  &kp Y             &kp P
+&hml LGUI E  &hml LALT I   &hml LCTRL A  &hml LSHFT O     &mo_minus_equal  &kp ESC        &kp LG(TAB)    &kp K        &hmr RSHIFT T  &hmr RCTRL N  &hmr RIGHT_ALT S  &hmr RIGHT_WIN H
+&kp Z        &kp X         &kp C         &kp V            &mo_semi_plus    &kp CLCK       &kp LG(LS(S))  &kp G        &kp D          &kp M         &kp J             &kp B
+&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &td_ime          &lt 2 SPACE      &lt 3 TAB      &kp BSPC       &lt 1 ENTER                                                 &kp DEL
             >;
         };
 
