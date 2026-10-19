@@ -314,10 +314,10 @@
         NAV {
             display-name = "NAV";
             bindings = <
-&kp F1    &kp F2    &kp F3     &kp F4     &kp F5                                      &kp LC(LS(T))  &kp ESC          &kp UP     &kp CAPS     &kp C_VOL_UP
-&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp F11      &kp C_BRIGHTNESS_INC  &kp LC(T)      &kp LEFT         &kp DOWN   &kp RIGHT    &kp C_VOL_DN
-&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &kp C_BRIGHTNESS_DEC  &kp LC(W)      &kp LC(LS(TAB))  &td_media  &kp LC(TAB)  &kp C_MUTE
-&trans    &trans    &trans     &trans     &trans   &trans       &trans                &trans                                                  &trans
+&kp F1    &kp F2    &kp F3     &kp F4     &kp F5                                      &kp LC(LS(T))  &kp RC(RS(TAB))  &kp UP     &kp RC(TAB)    &kp C_VOL_UP
+&kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp F11      &kp C_BRIGHTNESS_INC  &kp LC(T)      &kp LEFT         &kp DOWN   &kp RIGHT      &kp C_VOL_DN
+&kp F6    &kp F7    &kp F8     &kp F9     &kp F10  &kp F12      &kp C_BRIGHTNESS_DEC  &kp LC(W)      &kp RA(LEFT)     &td_media  &kp RA(RIGHT)  &kp C_MUTE
+&trans    &trans    &trans     &trans     &trans   &trans       &trans                &trans                                                    &trans
             >;
         };
 
@@ -338,9 +338,9 @@
         MOUSE {
             display-name = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp RC(RS(T))  &mkp MB4         &mo SCROLL    &mkp MB5      &kp RC(R)
+&trans  &trans  &trans  &trans  &trans                      &kp RC(RS(T))  &kp RC(RS(TAB))  &mo SCROLL    &kp RC(TAB)   &kp RC(R)
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(T)      &click_off_l     &click_off_m  &click_off_r  &mo SNIPE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(W)      &kp RC(RS(TAB))  &trans        &kp RC(TAB)   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp RC(W)      &mkp MB4         &trans        &mkp MB5      &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                      &trans
             >;
         };
