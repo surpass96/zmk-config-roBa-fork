@@ -1,4 +1,8 @@
 name: roBa
 build:
+  # 薙刀式（naginata/、surpass96/zmk-naginata から取り込み）
+  cmake: naginata
+  kconfig: naginata/Kconfig
   settings:
     board_root: .
+    dts_root: naginata
