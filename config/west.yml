@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: kumamuk-git
       url-base: https://github.com/kumamuk-git
+    - name: surpass96
+      url-base: https://github.com/surpass96
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: kumamuk-git
       revision: 5e04553ab803d24405bd45621a41310ea3050e59 # main as of 2026-09-26
+    - name: zmk-naginata
+      remote: surpass96
+      revision: 6d852bf9b42d860b8a2bfbb0042dd20124c53ade # main as of 2026-10-23（薙刀式 v18）
   self:
     path: config
